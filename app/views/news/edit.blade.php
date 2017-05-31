@@ -1,0 +1,1 @@
+C:\xampp\htdocs\cir_brcl_wbs_2014_05\trunk\app/views/news/edit.blade.php

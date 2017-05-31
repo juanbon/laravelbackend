@@ -1,0 +1,4366 @@
+/* ===============================================================
+
+------------------------------------------------------------------
+** Generic
+------------------------------------------------------------------
+** Mobile Menu
+------------------------------------------------------------------
+** Font face
+------------------------------------------------------------------
+** HOME
+------------------------------------------------------------------
+** HEADER
+------------------------------------------------------------------
+------------------------------------------------------------------
+------------------------------------------------------------------
+
+================================================================*/
+
+
+
+
+/* ===============================================================
+
+** Contact Aside
+
+================================================================*/
+
+aside {
+height: 215px;
+overflow: hidden;
+position: static;
+margin-top: -215px;
+width: 100%;
+background: url('../img/ui/stroke.svg') 0 bottom no-repeat;
+}
+
+aside .center {
+width: 1000px;
+margin: 0 auto;
+overflow: hidden;
+position: relative;
+height: 100%;
+}
+
+aside h4 {
+font: 40px/44px 'bold';
+color: #303030;
+text-transform: uppercase;
+text-align: center;
+position: relative;
+width: 255px;
+margin: 0;
+top: 80px;
+left: 0px;
+}
+
+aside h4:after {
+	content: "";
+	width: 21px;
+	height: 19px;
+	background: url('../img/ui/star_black.png');
+	position: absolute;
+	top: 10px;
+	right: 0px;
+}
+
+aside h4:before {
+	content: "";
+	width: 21px;
+	height: 19px;
+	background: url('../img/ui/star_black.png');
+	position: absolute;
+	top: 10px;
+	left: 0px;
+}
+
+
+aside .center div {
+width: 550px;
+position: relative;
+float: right;
+top: -20px;
+right: 80px;
+}
+
+aside .center div article {
+float: left;
+margin-right: 20px;
+}
+
+aside .center div article h6 {
+	font: 18px/22px 'museo_500';
+	color: #000;
+	margin: 0 0 10px;
+}
+
+
+aside .center div article p {
+	color: #000;
+font: 16px/20px 'museo_100';
+margin: 0 0 10px;
+}
+
+aside .center a.close {
+position: absolute;
+right: 20px;
+top: 30px;
+}
+
+aside .center a.close svg {
+	fill:#000;
+}
+
+
+/* ===============================================================
+
+** Loader Progress
+
+================================================================*/
+
+
+.progress_overlay {
+position: fixed;
+background-color: #FFF;
+width: 100%;
+height: 100%;
+left: 0;
+top: 0;
+z-index: 999999999999999999999999999999999999;
+}
+
+.progress {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	color: #4E5A62;
+	z-index: 999999999999999999999999999999999999999;
+	font: 34px/38px 'bold';
+	margin-left:-38px;
+	margin-top: -12px; 
+}
+
+
+/* ===============================================================
+
+** Generic
+
+================================================================*/
+
+body {
+	height: 100%;
+}
+
+ svg {height: 100%; }
+
+/* ===============================================================
+
+** Rotate Device Animation
+
+================================================================*/
+
+#rotationDevice {
+height: 0;
+display: none;
+}
+
+/* ===============================================================
+
+** Mobile Menu
+
+================================================================*/
+
+.wrapper {
+height: 100%;
+width: 100%;
+position: relative;
+display: block;
+-webkit-transition: 500ms ease;
+-moz-transition: 500ms ease;
+-ms-transition: 500ms ease;
+-o-transition: 500ms ease;
+transition: 500ms ease;
+float: left;
+opacity: 0;
+}
+
+
+.pushed {
+	-moz-transform: translateX(-400px);
+	-webkit-transform: translateX(-400px);
+	-o-transform: translateX(-400px);
+	-ms-transform: translateX(-400px);
+	transform: translateX(-400px);
+}
+
+
+.mobile_menu_trigger, .mobile_menu {
+	display: none;
+}
+
+
+
+ /* ===============================================================
+
+** Font face
+
+================================================================*/
+
+ @font-face {font-family: 'medium';
+    src: url('../fonts/medium.eot');
+    src: url('../fonts/medium.eot?#iefix') format('embedded-opentype'), url('../fonts/medium.woff') format('woff'), url('../fonts/medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+
+ @font-face {font-family: 'bold';
+    src: url('../fonts/bold.eot');
+    src: url('../fonts/bold.eot?#iefix') format('embedded-opentype'), url('../fonts/bold.woff') format('woff'), url('../fonts/bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+  @font-face {font-family: 'museo_100';
+    src: url('../fonts/museo-100.eot');
+    src: url('../fonts/museo-100.eot?#iefix') format('embedded-opentype'), url('../fonts/museo-100.woff') format('woff'), url('../fonts/museo-100.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+    
+      @font-face {font-family: 'museo_500';
+    src: url('../fonts/museo-500.eot');
+    src: url('../fonts/museo-500.eot?#iefix') format('embedded-opentype'), url('../fonts/museo-500.woff') format('woff'), url('../fonts/museo-500.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+      @font-face {font-family: 'museo_700';
+    src: url('../fonts/museo-700.eot');
+    src: url('../fonts/museo-700.eot?#iefix') format('embedded-opentype'), url('../fonts/museo-700.woff') format('woff'), url('../fonts/museo-700.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+    
+
+/* ============================================================================================================================================================
+
+** HOME
+
+=============================================================================================================================================================*/
+
+
+
+.home .highlight {
+position: relative;
+width: 100%;
+opacity: 0;
+}
+
+
+
+/* ============================================================================================================================================================
+
+** HEADER
+
+=============================================================================================================================================================*/
+
+header {
+position: absolute;
+width: 100%;
+z-index: 999999999;
+top: 0;
+left: 0;
+right: 0;
+}
+
+
+/* ===============================================================
+
+** Logo
+
+================================================================*/
+
+h1 {
+padding: 0;
+position: relative;
+margin: 20px 0 0 20px;
+float: left;
+opacity: 0;
+}
+
+h1 a.logo {
+	width: 108px;
+	height: 103px;
+	display: block;
+	background: url('../img/ui/logo.png') no-repeat 0 0;
+}
+
+/* ===============================================================
+
+** Nav
+
+================================================================*/
+
+nav {
+position: absolute;
+float: right;
+margin: 40px 0 0 -590px;
+padding-bottom: 64px;
+background: url('../img/ui/nav_background.png') no-repeat 0 0;
+left: 50%;
+width: 1008px;
+}
+
+nav ul li.line:before {
+content: "";
+border-left: 2px solid #FFF;
+height: 20px;
+width: 2px;
+position: relative;
+top: -4px;
+left: -10px;
+opacity: 0.5;
+}
+
+nav:before {
+content: "";
+width: 15px;
+height: 13px;
+background: url('../img/ui/star.png');
+position: absolute;
+top: 10px;
+left: 50px;
+}
+
+nav:after {
+	content: "";
+	width: 15px;
+	height: 13px;
+	background: url('../img/ui/star.png');
+	position: absolute;
+	top: 10px;
+	right: 60px;
+}
+
+nav > ul {
+margin: 0;
+padding: 0;
+position: relative;
+left: 65px;
+display: inline-block;
+top: 5px;
+}
+
+nav > ul > li {
+float: left;
+margin: 0 10px;
+position: relative;
+}
+
+nav > ul > li > a {
+	font: 26px/28px 'bold';
+	color: #fff;
+	text-transform: uppercase; 
+	text-decoration: none;
+	padding: 14px 10px 10px;
+	border-radius: 15px 15px 0px 0px;
+	-webkit-transition: background-color 150ms ease-out;
+	   -moz-transition: background-color 150ms ease-out;
+	    -ms-transition: background-color 150ms ease-out;
+	     -o-transition: background-color 150ms ease-out;
+	        transition: background-color 150ms ease-out;
+}
+
+nav > ul > li > a:hover {
+	color: #4e5a62;	
+}
+
+
+nav > ul > li.brands.active > a {
+	background: #E9F4F5;
+	padding: 14px 10px 10px;
+	border-radius: 15px 15px 0px 0px;
+	color: #4e5a62;
+}
+
+
+nav > ul > li > ul {
+background-color: rgba(204,223,212,0.74);
+display: block;
+width: 140px;
+height: auto;
+margin: 0;
+padding: 0;
+position: absolute;
+top: 38px;
+left: 2px;
+border-radius: 0 15px 15px 15px;
+display: none;
+}
+
+nav > ul > li > ul > li {
+	text-align: center;
+	height: 40px;
+}
+
+nav > ul > li > ul > li > a {
+	font: 20px/40px 'bold';
+	display: block;
+	position: relative;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+nav > ul > li > ul > li > a:before {
+	content: "";
+	position: absolute;
+	top: 11px;
+	left: 15px;
+	background: url('../img/ui/star_small.png');
+	width: 8px;
+	height: 7px;
+}
+
+nav > ul > li > ul > li > a:after {
+	content: "";
+	position: absolute;
+	top: 11px;
+	right: 15px;
+	background: url('../img/ui/star_small.png');
+	width: 8px;
+	height: 7px;
+}
+
+nav > ul > li > ul > li > a:hover {
+	color: #4e5a62;	
+}
+
+
+
+/* ===============================================================
+
+** Nav Extra
+
+================================================================*/
+
+header .social_media {
+width: 246px;
+height: auto;
+background: url('../img/ui/aside_background.png') no-repeat 0 55px;
+float: right;
+margin: 40px 35px 0 0;
+overflow: hidden;
+padding-bottom: 30px;
+}
+
+
+/* ===============================================================
+
+** Social Media
+
+================================================================*/
+
+
+
+.social_media a {
+width: 25px;
+height: 25px;
+display: block;
+color: #FFF;
+fill: #FFF;
+padding: 6px;
+border-radius: 30px;
+border: 1px solid #FFF;
+float: right;
+margin-right: 10px;
+-webkit-transition: all 200ms ease-out; 
+   -moz-transition: all 200ms ease-out; 
+    -ms-transition: all 200ms ease-out; 
+     -o-transition: all 200ms ease-out; 
+        transition: all 200ms ease-out; 
+}
+
+.social_media a:hover {
+fill: #CECECE;	
+border: 1px solid #CECECE;
+}
+
+.social_media a svg {
+	height: 100%;
+    width: 100%
+}
+
+
+/* ===============================================================
+
+** Pagination
+
+================================================================*/
+
+
+.pagination {
+	position: absolute;
+	top: 630px;
+	background: url('../img/home/pagination_misc.png') no-repeat center 0;
+	width: 100%;
+	height: 135px;
+	z-index: 99999999999999999999999999999999999999999999999999999;
+	display: none;
+}
+
+.pagination_center {
+	width: 405px;
+	margin: 21px auto;
+	overflow: hidden;
+}
+
+.pagination_center a {
+	width: 91px;
+	height: 91px;
+	background-image: url('../img/home/pagination.png');
+	background-repeat: no-repeat;
+	display: block;
+	float: left;
+	margin: 0 5px;
+}
+
+.pagination .barcel.active {
+	background-position: 0 0;
+}
+
+.pagination .barcel {
+	background-position: 2px -105px;
+}
+
+.pagination .ricolino.active {
+	background-position: -96px 0;
+}
+
+.pagination .ricolino {
+	background-position: -99px -106px;
+}
+
+.pagination .coronado.active {
+	background-position: -193px 0;
+}
+
+.pagination .coronado {
+	background-position: -193px -106px;
+}
+
+.pagination .vero.active {
+	background-position: -289px 0;
+}
+
+.pagination .vero {
+	background-position: -289px -106px;
+}
+
+
+/* ===============================================================
+
+** Pagination Button
+
+================================================================*/
+
+.pagination .go_back {
+text-decoration: none;
+display: block;
+margin: -15px auto 0;
+width: 95px;
+display: none
+}
+
+.pagination .go_back svg {
+clear: both;
+left: 18px;
+position: relative;
+-webkit-animation-name: 'pulse_animation';
+-webkit-animation-duration: 4s;
+-webkit-transform-origin: 70% 70%;
+-webkit-animation-iteration-count: infinite;
+-webkit-animation-timing-function: linear;
+}
+
+
+@-webkit-keyframes pulse_animation {
+	0% { -webkit-transform: scale(1); }
+	35% { -webkit-transform: scale(1.15); }
+	50% { -webkit-transform: scale(1); }
+	75% { -webkit-transform: scale(1.15); }
+	100% { -webkit-transform: scale(1); }
+}
+
+
+
+
+
+
+.pagination .go_back span {
+font: 26px/28px 'bold';
+color: #484848;
+position: relative;
+top: 5px;
+display: block;
+text-align: center;
+margin: 0;
+left: -8px;
+}
+
+
+
+
+
+/* ===============================================================
+
+** Parallax
+
+================================================================*/
+
+.parallax_background {
+width: 100%;
+height: 1205px;
+background: url('../img/home/mask.png') no-repeat center 0px, 
+ url('../img/home/background.jpg') no-repeat center 269px;
+position: relative;
+z-index: 999999;
+margin-top: -240px;
+}
+
+
+
+.parallax {
+	width: 1100px;
+	margin: 0 auto;
+	overflow: visible;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 255px;
+	z-index: 999999;
+}
+
+/* ===============================================================
+
+** Chili
+
+================================================================*/
+
+.chili {
+	width: 300px;
+	height: 300px;
+	background: url('../img/home/circle.png') no-repeat 0 0;
+	position: absolute;
+	top: -10px;
+	left: 37px;
+	overflow: visible;
+}
+
+.chili_1 {
+width: 127px;
+height: 251px;
+position: absolute;
+top: -57px;
+left: 82px;
+background: url('../img/home/chili/chili_1.png');
+}
+
+.chili_2 {
+width: 172px;
+height: 279px;
+position: absolute;
+top: 3px;
+left: -39px;
+background: url('../img/home/chili/chili_2.png');
+}
+
+.chili_3 {
+width: 180px;
+height: 202px;
+position: absolute;
+top: 130px;
+left: 112px;
+background: url('../img/home/chili/chili_3.png');
+}
+
+/* ===============================================================
+
+** Lemon
+
+================================================================*/
+
+.lemon {
+	width: 300px;
+	height: 300px;
+	background: url('../img/home/circle.png') no-repeat 0 0;
+	position: absolute;
+	top: 29px;
+	right: -2px;
+}
+
+.lemon_1 {
+	width: 185px;
+	height: 124px;
+	position: absolute;
+	top: -62px;
+	left: 68px;
+	background: url('../img/home/lemon/lemon_1.png');
+}
+
+.lemon_2 {
+	width: 187px;
+	height: 109px;
+	position: absolute;
+	top: 36px;
+	left: -71px;
+	background: url('../img/home/lemon/lemon_2.png');
+}
+
+.lemon_3 {
+	width: 163px;
+	height: 163px;
+	position: absolute;
+	top: 79px;
+	left: 78px;
+	background: url('../img/home/lemon/lemon_3.png');
+}
+
+
+/* ===============================================================
+
+** Corn
+
+================================================================*/
+
+.corn {
+width: 300px;
+height: 300px;
+background: url('../img/home/circle.png') no-repeat 0 0;
+position: absolute;
+top: 433px;
+left: 688px;
+}
+
+.corn_1 {
+width: 239px;
+height: 160px;
+position: absolute;
+top: -14px;
+left: 87px;
+background: url('../img/home/corn/corn_1.png');
+}
+
+.corn_2 {
+width: 49px;
+height: 70px;
+position: absolute;
+top: 98px;
+left: 21px;
+background: url('../img/home/corn/corn_2.png');
+}
+
+.corn_3 {
+width: 68px;
+height: 51px;
+position: absolute;
+top: 146px;
+left: -86px;
+background: url('../img/home/corn/corn_3.png');
+}
+
+.corn_4 {
+width: 44px;
+height: 41px;
+position: absolute;
+top: 170px;
+left: 17px;
+background: url('../img/home/corn/corn_4.png');
+}
+
+.corn_5 {
+width: 44px;
+height: 41px;
+position: absolute;
+top: 177px;
+left: 142px;
+background: url('../img/home/corn/corn_5.png');
+}
+
+.corn_6 {
+width: 68px;
+height: 52px;
+position: absolute;
+top: 201px;
+left: 81px;
+background: url('../img/home/corn/corn_6.png');
+}
+
+.corn_7 {
+width: 40px;
+height: 48px;
+position: absolute;
+top: 169px;
+left: 18px;
+background: url('../img/home/corn/corn_7.png');
+}
+
+.corn_8 {
+width: 44px;
+height: 40px;
+position: absolute;
+top: 231px;
+left: 150px;
+background: url('../img/home/corn/corn_8.png');
+
+}
+
+.corn_9 {
+	width: 50px;
+	height: 69px;
+	position: absolute;
+	top: 243px;
+	left: 265px;
+	background: url('../img/home/corn/corn_9.png');
+}
+
+/* ===============================================================
+
+** Potatoes
+
+================================================================*/
+
+.potatoes {
+width: 300px;
+height: 300px;
+background: url('../img/home/circle.png') no-repeat 0 0;
+position: absolute;
+top: 370px;
+left: 182px;
+}
+
+.potatoes_1 {
+width: 114px;
+height: 115px;
+position: absolute;
+top: -24px;
+left: 156px;
+background: url('../img/home/potatoes/potatoes_1.png');
+}
+
+.potatoes_2 {
+width: 119px;
+height: 101px;
+position: absolute;
+top: 89px;
+left: 8px;
+background: url('../img/home/potatoes/potatoes_2.png');
+}
+
+.potatoes_3 {
+width: 115px;
+height: 99px;
+position: absolute;
+top: 170px;
+left: 171px;
+background: url('../img/home/potatoes/potatoes_3.png');
+}
+
+.potatoes_4 {
+width: 110px;
+height: 84px;
+position: absolute;
+top: 266px;
+left: 75px;
+background: url('../img/home/potatoes/potatoes_4.png');
+}
+
+/* ===============================================================
+
+** Title
+
+================================================================*/
+
+.title {
+	width: 450px;
+	position: absolute;
+	top: 235px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+
+.title:before {
+	content: "";
+	position: absolute;
+	top: 27px;
+	left: 0;
+	background: url('../img/ui/star_black.png');
+	width: 21px;
+	height: 19px;
+}
+
+.title:after {
+	content: "";
+	position: absolute;
+	top: 27px;
+	right: 0;
+	background: url('../img/ui/star_black.png');
+	width: 21px;
+	height: 19px;
+}
+
+.title h4 {
+	font: 60px/64px 'bold';
+	color: #17100a;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 10px 0;
+
+}
+
+.title p {
+	font: 25px/26px 'museo_100';
+	color: #1e1e1e;
+	text-align: center;
+	margin: 10px 0;
+}
+
+
+
+/* ===============================================================
+
+** Feeds Container
+
+================================================================*/
+
+.feeds_background {
+position: relative;
+z-index: 999999;
+width: 100%;
+margin-top: -296px;
+background: url('../img/home/people_front.png'), url('../img/home/people_back.png'), url('../img/home/feeds_background.svg');
+background-position: 1px 432px, 1px 384px, 0 0;
+background-repeat: no-repeat;
+height: 715px;
+}
+
+/* ===============================================================
+
+** Feeds Article
+
+================================================================*/
+
+
+.feeds {
+width: 1150px;
+margin: 0 auto;
+overflow: visible;
+height: 100%;
+position: absolute;
+left: 0;
+right: 0;
+top: 0px;
+z-index: 999999;
+}
+
+.feeds article {
+	width: 322px;
+	height: 108px;
+	background: url('../img/home/feed_background.png') no-repeat 0 0;
+	position: absolute;
+	overflow: visible;
+}
+
+
+.position_5 {
+	top: 380px;
+	right: 40px;
+}
+
+.position_4 {
+top: 460px;
+right: 395px;
+}
+
+.position_3 {
+top: 410px;
+left: 35px;
+}
+
+.position_2 {
+	top: 235px;
+	right: 300px;
+	-webkit-transform: scale(0.90);
+	-moz-transform: scale(0.90);
+	-ms-transform: scale(0.90);
+	-o-transform: scale(0.90);
+	transform: scale(0.90);
+}
+
+.position_1 {
+top: 200px;
+left: 100px;
+-webkit-transform: scale(0.90);
+-moz-transform: scale(0.90);
+-ms-transform: scale(0.90);
+-o-transform: scale(0.90);
+transform: scale(0.90);
+}
+
+
+.feeds article img {
+	float: left;
+	margin-right: 3%;
+	max-width: 30%;
+	height: auto;
+}
+
+.feeds article.twitter small {
+position: absolute;
+width: 25px;
+height: 25px;
+display: block;
+color: #FFF;
+fill: #FFF;
+padding: 6px;
+top: -20px;
+right: -15px;
+background: #7FC5F6 url('../img/home/twitter.svg') no-repeat center center;
+background-size: 85%;
+border-radius: 30px;
+}
+
+.feeds article.facebook small {
+position: absolute;
+width: 25px;
+height: 25px;
+display: block;
+color: #FFF;
+fill: #FFF;
+padding: 6px;
+top: -20px;
+right: -15px;
+background: #576ba6 url('../img/home/facebook.svg') no-repeat center center;
+background-size: 85%;
+border-radius: 30px;
+}
+
+.feeds article > div {
+float: left;
+max-width: 68%;
+height: 92px;
+box-sizing: border-box;
+padding: 5px 5px 5px 0;
+}
+
+.feeds article > div h4 {
+font: 14px/18px 'museo_700';
+color: #363636;
+margin: 2px 0 0;
+}
+	.feeds article > div h4 span {
+		color: #989898;
+		font: 12px/18px 'museo_500';
+	}
+
+	.feeds article > div p {
+		font: 14px/14px 'museo_100';
+		color: #363636;
+		margin: 0 0 2px;
+	}
+
+.feeds article span.time {
+	font: 14px/14px 'museo_100';
+	color: #60beee;
+	float: left;
+}
+
+.feeds article span.time i {
+background: url(../img/ui/time_icon.png) no-repeat 0 0;
+width: 9px;
+height: 9px;
+float: left;
+margin-right: 5px;
+position: relative;
+top: 2px;
+left: 0px;
+}
+
+.feeds article span.favorite {
+	font: 14px/14px 'museo_100';
+	color: #60BEEE;
+	float: right;
+}
+
+.feeds article span.favorite i {
+	background: url('../img/home/favorite_icon.png') no-repeat 0 0;
+	width: 10px;
+	height: 9px;
+	float: left;
+	margin-right: 5px;
+	position: relative;
+	top: 1px;
+	left: 0px;
+}
+
+.feeds article span.retweet {
+	font: 14px/14px 'museo_100';
+	color: #60BEEE;
+	float: right;
+	margin-left: 15px;
+	margin-right: 5px;
+}
+
+.feeds article span.retweet i {
+	background: url('../img/home/retweet_icon.png') no-repeat 0 0;
+	width: 11px;
+	height: 10px;
+	float: left;
+	margin-right: 5px;
+	position: relative;
+	top: 2px;
+	left: 0px;
+}
+
+.feeds article span.like {
+	font: 14px/14px 'museo_100';
+	color: #576ba6;
+	float: right;
+}
+
+.feeds article span.like i {
+	background: url('../img/home/like_icon.png') no-repeat 0 0;
+	width: 12px;
+	height: 12px;
+	float: left;
+	margin-right: 5px;
+	position: relative;
+	top: 0px;
+	left: 0px;
+}
+
+.feeds article span.share {
+	font: 14px/14px 'museo_100';
+	color: #576BA6;
+	float: right;
+	margin-left: 15px;
+	margin-right: 5px;
+}
+
+.feeds article span.share i {
+background: url('../img/home/share_icon.png') no-repeat 0 0;
+width: 8px;
+height: 10px;
+float: left;
+margin-right: 5px;
+position: relative;
+top: 1px;
+left: 0px;
+}
+
+
+
+
+/* ===============================================================
+
+** News
+
+================================================================*/
+
+
+
+
+.news_button {
+width: 100%;
+height: 110px;
+background: url('../img/home/news.svg') no-repeat 0 0;
+position: relative;
+z-index: 99999999999;
+margin-top: -106px;
+}
+
+
+.news_button a i {
+margin-right: 5px;
+fill: #5ABA86;
+position: relative;
+top: 1px;
+}
+
+
+
+/* ===============================================================
+
+** Footer
+
+================================================================*/
+
+footer {
+height: 60px;
+padding: 10px 20px;
+box-sizing: border-box;
+background-color: #FFF;
+width: 100%;
+overflow-y: hidden;
+position: relative;
+bottom: 0;
+}
+
+
+footer p {
+	font: 16px/28px 'bold';
+	margin: 10px 0;
+	color: #000;
+	text-transform: uppercase;
+	width: 500px;
+	float: left;
+}
+
+footer a {
+	color: #000;
+}
+
+/* ===============================================================
+
+** Social Media Activiyu
+
+================================================================*/
+
+
+.social_media_activity {
+	width: 320px;
+	float: right;
+	position: relative;
+	top: 10px;
+}
+
+.gp_like {
+	float: left;
+	position: relative;
+	top: 0;
+	margin-right: 5px;
+}
+
+.fb-like {
+	position: absolute!important;
+	top: 0;
+	left: 185px!important;
+}
+
+.tw_like {
+	float: left;
+	position: relative;
+	top: 0;
+	margin-right: 5px;
+}
+
+/* ===============================================================
+
+** Query Loader
+
+================================================================*/
+
+
+#qLoverlay #qLbar {
+    display: none !important;
+}
+#qLoverlay #qLpercentage {
+    font: 40px/45px 'bold'!important;
+    color: #17100A!important;
+    opacity: 0.8!important;
+	display: block !important;
+    margin: auto!important;
+    position: absolute!important;
+    top: 0!important;
+    left: 0!important;
+    right: 0!important;
+    bottom:0!important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/* ===============================================================
+
+** Preload
+
+================================================================*/
+
+.preload {
+visibility: hidden;
+position: fixed;
+top: -100%;
+}
+
+
+/* ===============================================================
+
+** Mobile Menu
+
+================================================================*/
+
+
+.mobile_menu ul {
+	margin: 50px 0 0 0;
+	padding: 0;
+}
+
+.mobile_menu ul li {
+	list-style: none;
+	margin: 0;
+	padding: 15px 0;
+	text-align: center;
+	border-bottom: 1px solid #aba8ae;
+}
+
+.mobile_menu ul li a {
+	font: 26px/28px 'bold';
+	color: #242424;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+/* ===============================================================
+
+** Push Down
+
+================================================================*/
+
+.push_down {
+position: relative;
+margin-top: -190px;
+z-index: 9999999;
+}
+
+/* ===============================================================
+
+** Push Down
+
+================================================================*/
+
+.products_background {
+position: relative;
+width: 100%;
+height: 190px;
+background: url('../img/home/products.svg') 0 0;
+margin-top: -190px;
+z-index: 9999999;
+}
+
+.products {
+	width: 1100px;
+	margin: 0 auto;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	display: none;
+}
+
+/* ===============================================================
+
+** Product positions
+
+================================================================*/
+
+.barcel_1 {
+	width: 220px;
+	height: 204px;
+	background:url('../img/home/barcel/barcel_1.png');
+	position: absolute;
+	top: 100px;
+	left: 10px;
+	opacity:0;
+}
+
+.barcel_2 {
+	width: 219px;
+	height: 204px;
+	background: url('../img/home/barcel/barcel_2.png');
+	position: absolute;
+	top: 100px;
+	left: 290px;
+	opacity:0;
+}
+
+.barcel_3 {
+width: 219px;
+height: 204px;
+background: url('../img/home/barcel/barcel_3.png');
+position: absolute;
+top: 100px;
+left: 560px;
+opacity:0;
+}
+
+.barcel_4 {
+width: 219px;
+height: 204px;
+background: url('../img/home/barcel/barcel_4.png');
+position: absolute;
+top: 100px;
+left: 846px;
+opacity:0;
+}
+
+
+.barcel_5 {
+width: 220px;
+height: 203px;
+background: url('../img/home/barcel/barcel_5.png');
+position: absolute;
+top: 350px;
+left: 10px;
+opacity:0;
+}
+
+.barcel_6 {
+width: 178px;
+height: 213px;
+background: url('../img/home/barcel/barcel_6.png');
+position: absolute;
+top: 341px;
+left: 302px;
+opacity:0;
+}
+
+.barcel_7 {
+width: 220px;
+height: 221px;
+background: url('../img/home/barcel/barcel_7.png');
+position: absolute;
+top: 335px;
+left: 551px;
+opacity:0;
+}
+
+.barcel_8 {
+width: 220px;
+height: 221px;
+background: url('../img/home/barcel/barcel_8.png');
+position: absolute;
+top: 335px;
+left: 847px;
+opacity:0;
+}
+
+.barcel_9 {
+width: 220px;
+height: 221px;
+background: url('../img/home/barcel/barcel_9.png');
+position: absolute;
+top: 602px;
+left: 10px;
+opacity:0;
+}
+
+.barcel_10 {
+width: 220px;
+height: 221px;
+background: url('../img/home/barcel/barcel_10.png');
+position: absolute;
+top: 602px;
+left: 280px;
+opacity:0;
+}
+
+
+.barcel_11 {
+width: 220px;
+height: 221px;
+background: url('../img/home/barcel/barcel_11.png');
+position: absolute;
+top: 602px;
+left: 546px;
+opacity:0;
+}
+
+
+.barcel_12 {
+width: 225px;
+height: 213px;
+background: url('../img/home/barcel/barcel_12.png');
+position: absolute;
+top: 611px;
+left: 840px;
+opacity:0;
+}
+
+.barcel_13 {
+width: 218px;
+height: 228px;
+background: url('../img/home/barcel/barcel_13.png');
+position: absolute;
+top: 860px;
+left: 10px;
+opacity:0;
+}
+
+.barcel_14 {
+width: 107px;
+height: 217px;
+background: url('../img/home/barcel/barcel_14.png');
+position: absolute;
+top: 869px;
+left: 334px;
+opacity:0;
+}
+
+.barcel_15 {
+width: 107px;
+height: 217px;
+background: url('../img/home/barcel/barcel_15.png');
+position: absolute;
+top: 869px;
+left: 594px;
+opacity:0;
+}
+
+.barcel_16 {
+width: 107px;
+height: 217px;
+background: url('../img/home/barcel/barcel_16.png');
+position: absolute;
+top: 869px;
+left: 895px;
+opacity:0;
+}
+
+
+.barcel_17 {
+width: 107px;
+height: 217px;
+background: url('../img/home/barcel/barcel_17.png');
+position: absolute;
+top: 1136px;
+left: 210px;
+opacity:0;
+}
+
+
+.barcel_18 {
+width: 107px;
+height: 217px;
+background: url('../img/home/barcel/barcel_18.png');
+position: absolute;
+top: 1136px;
+left: 470px;
+opacity:0;
+}
+
+
+.barcel_19 {
+width: 107px;
+height: 217px;
+background: url('../img/home/barcel/barcel_19.png');
+position: absolute;
+top: 1136px;
+left: 750px;
+opacity:0;
+}
+
+
+
+
+.ricolino_1 {
+	width: 164px;
+	height: 216px;
+	background: url('../img/home/ricolino/ricolino_1.png');
+	position: absolute;
+	top: 200px;
+	left: 10px;
+	opacity:0;
+}
+
+
+.ricolino_2 {
+	width: 219px;
+	height: 213px;
+	background: url('../img/home/ricolino/ricolino_2.png');
+	position: absolute;
+	top: 200px;
+	left: 290px;
+	opacity:0;
+}
+
+.ricolino_3 {
+width: 219px;
+height: 216px;
+background: url('../img/home/ricolino/ricolino_3.png');
+position: absolute;
+top: 200px;
+left: 560px;
+opacity:0;
+}
+
+.ricolino_4 {
+width: 179px;
+height: 218px;
+background: url('../img/home/ricolino/ricolino_4.png');
+position: absolute;
+top: 200px;
+left: 846px;
+opacity:0;
+}
+
+
+
+.ricolino_5 {
+width: 208px;
+height: 140px;
+background: url('../img/home/ricolino/ricolino_5.png');
+position: absolute;
+top: 500px;
+left: 10px;
+opacity:0;
+}
+
+.ricolino_6 {
+width: 179px;
+height: 128px;
+background: url('../img/home/ricolino/ricolino_6.png');
+position: absolute;
+top: 510px;
+left: 302px;
+opacity:0;
+}
+
+.ricolino_7 {
+width: 209px;
+height: 128px;
+background: url('../img/home/ricolino/ricolino_7.png');
+position: absolute;
+top: 510px;
+left: 551px;
+opacity:0;
+}
+
+.ricolino_8 {
+width: 209px;
+height: 129px;
+background: url('../img/home/ricolino/ricolino_8.png');
+position: absolute;
+top: 510px;
+left: 847px;
+opacity:0;
+}
+
+.ricolino_9 {
+width: 146px;
+height: 219px;
+background: url('../img/home/ricolino/ricolino_9.png');
+position: absolute;
+top: 700px;
+left: 32px;
+opacity: 0;
+}
+
+.coronado_1 {
+width: 105px;
+height: 209px;
+background: url('../img/home/coronado/coronado_1.png');
+position: absolute;
+top: 220px;
+left: 10px;
+opacity:0;
+}
+
+
+.coronado_2 {
+width: 105px;
+height: 209px;
+background: url('../img/home/coronado/coronado_2.png');
+position: absolute;
+top: 220px;
+left: 290px;
+opacity:0;
+}
+
+.coronado_3 {
+width: 217px;
+height: 223px;
+background: url('../img/home/coronado/coronado_3.png');
+position: absolute;
+top: 207px;
+left: 542px;
+opacity: 0;
+}
+
+.coronado_4 {
+width: 219px;
+height: 210px;
+background: url('../img/home/coronado/coronado_4.png');
+position: absolute;
+top: 220px;
+left: 846px;
+opacity:0;
+}
+
+
+.vero_1 {
+	width: 184px;
+	height: 209px;
+	background:url('../img/home/vero/vero_1.png');
+	position: absolute;
+	top: 100px;
+	left: 10px;
+	opacity:0;
+}
+
+.vero_2 {
+	width: 185px;
+	height: 213px;
+	background: url('../img/home/vero/vero_2.png');
+	position: absolute;
+	top: 100px;
+	left: 290px;
+	opacity:0;
+}
+
+.vero_3 {
+width: 185px;
+height: 215px;
+background: url('../img/home/vero/vero_3.png');
+position: absolute;
+top: 100px;
+left: 560px;
+opacity:0;
+}
+
+.vero_4 {
+width: 184px;
+height: 213px;
+background: url('../img/home/vero/vero_4.png');
+position: absolute;
+top: 100px;
+left: 846px;
+opacity:0;
+}
+
+
+.vero_5 {
+width: 184px;
+height: 211px;
+background: url('../img/home/vero/vero_5.png');
+position: absolute;
+top: 358px;
+left: 10px;
+opacity:0;
+}
+
+.vero_6 {
+width: 185px;
+height: 212px;
+background: url('../img/home/vero/vero_6.png');
+position: absolute;
+top: 358px;
+left: 302px;
+opacity:0;
+}
+
+.vero_7 {
+width: 185px;
+height: 212px;
+background: url('../img/home/vero/vero_7.png');
+position: absolute;
+top: 358px;
+left: 551px;
+opacity:0;
+}
+
+.vero_8 {
+width: 219px;
+height: 213px;
+background: url('../img/home/vero/vero_8.png');
+position: absolute;
+top: 358px;
+left: 847px;
+opacity:0;
+}
+
+.vero_9 {
+width: 219px;
+height: 214px;
+background: url('../img/home/vero/vero_9.png');
+position: absolute;
+top: 620px;
+left: 10px;
+opacity:0;
+}
+
+.vero_10 {
+width: 219px;
+height: 137px;
+background: url('../img/home/vero/vero_10.png');
+position: absolute;
+top: 655px;
+left: 280px;
+opacity:0;
+}
+
+
+
+
+/* ===============================================================
+
+** Modal Product
+
+================================================================*/
+
+
+/* ===============================================================
+
+** Overlay
+
+================================================================*/
+
+
+.overlay{
+position: fixed;
+width: 100%;
+height: 100%;
+visibility: hidden;
+top: 0;
+left: 0;
+z-index: 99999999999999;
+opacity: 0;
+background: rgba(0, 0, 0, 0.8);
+-webkit-transition: all 0.5s;
+-moz-transition: all 0.5s;
+transition: all 0.5s;
+}
+
+.overlay.active {
+opacity: 1;
+visibility: visible;
+}
+
+
+/* ===============================================================
+
+** Modal
+
+================================================================*/
+
+.overlay .modal {
+position: fixed;
+top: 50%;
+left: 50%;
+z-index: 2000;
+-webkit-backface-visibility: hidden;
+-moz-backface-visibility: hidden;
+backface-visibility: hidden;
+-webkit-transition: translate3d(0,0,0);
+color: #FFF;
+height: 756px;
+width: 811px;
+background: url('../img/home/modal_background.png');
+margin: -377px -405px;
+opacity: 0;
+visibility: hidden;
+-webkit-transform: scale(0.7);;
+-moz-transform: scale(0.7);;
+-ms-transform: scale(0.7);;
+transform: scale(0.7);;
+-webkit-transition: all 0.5s;
+-moz-transition: all 0.5s;
+transition: all 0.5s;
+}
+
+.overlay.active .modal {
+opacity: 1;
+visibility: visible;
+-webkit-transform: scale(1);
+-moz-transform: scale(1);
+-ms-transform: scale(1);
+transform: scale(1);
+}
+
+
+
+/* ===============================================================
+
+** Content
+
+================================================================*/
+
+
+
+
+.overlay .modal  img {
+	position: absolute;
+	top: 25px;
+	left: 135px;
+}
+
+.overlay .modal  h4 {
+font: 30px/34px 'bold';
+color: #000;
+position: absolute;
+top: 375px;
+left: 110px;
+margin: 10px 0;
+text-transform: uppercase;
+}
+
+.overlay .modal  h4 span {
+font: 30px/34px 'bold';
+color: #cb272a;
+text-transform: uppercase;
+}
+
+.overlay .modal  p {
+font: 16px/20px 'museo_100';
+color: #000;
+margin: 10px 0;
+width: 590px;
+}
+
+.scrollable {
+width: 590px;
+height: 150px;
+overflow: hidden;
+position: absolute;
+top: 430px;
+left: 110px;
+}
+
+.overlay .modal .nutrition {
+overflow: hidden;
+position: absolute;
+bottom: 73px;
+width: 667px;
+left: 72px;
+height: 75px;
+background: url('../img/home/nutrition_background.svg') no-repeat 0 0;
+z-index: 99999;
+}
+
+
+
+.overlay .modal .nutrition_facts_trigger {
+background: url('../img/home/nutrition_facts.png') no-repeat 0 0;
+width: 283px;
+height: 74px;
+display: block;
+position: absolute;
+top: 0;
+left: 50%;
+margin: 0 0 0 -141px;
+}
+
+.overlay .modal .close {
+	position: absolute;
+	top: 50px;
+	right: 50px;
+}
+
+.overlay .modal .close {
+position: absolute;
+top: 130px;
+right: 100px;
+display: block;
+width: 25px;
+height: 25px;
+opacity: 0;
+}
+
+.overlay .modal .close svg {
+	width: 100%;
+	height: 100%;
+	fill:#664e23;
+}
+
+
+.nutrition_facts {
+width: 100%;
+padding: 0;
+margin: 0;
+position: relative;
+top: 73px;
+}
+
+.nutrition_facts li {
+width: 100%;
+height: 25px;
+list-style: none;
+}
+
+.nutrition_facts li dl {
+padding: 0 0 0 20px;
+margin: 0;
+position: relative;
+top: 4px;
+}
+
+.nutrition_facts li dl dt {
+float: left;
+text-transform: uppercase;
+font: 15px/18px 'museo_500';
+color: #FFF;
+width: 220px;
+}
+
+
+.nutrition_facts li dl dd {
+float: left;
+text-transform: uppercase;
+font: 16px/20px 'museo_500';
+color: #FFF;
+margin: 0 0 0 -6px;
+}
+
+.ingredients {
+position: absolute;
+top: 73px;
+right: 18px;
+background: url('../img/home/ingredients_background.svg') 0 0;
+width: 262px;
+height: 334px;
+}
+
+.ingredients h5 {
+font: 25px/30px 'bold';
+color: #000;
+margin: 23px 10px 5px;
+text-transform: uppercase;
+}
+
+.ingredients ul {
+margin: 0;
+padding: 0 0 0 28px;
+}
+
+.ingredients ul li {
+	font: 15px/21px 'museo_500';
+	color: #000;
+}
+
+
+
+/* ===================================================================================================================================================
+
+** NEWS
+
+====================================================================================================================================================*/
+
+.news .highlight {
+position: relative;
+width: 100%;
+opacity: 0;
+height: 790px;
+background: url('../img/news/highlight.jpg') center 0;
+}
+
+
+.news .highlight .content {
+	position: absolute;
+	width: 700px;
+	margin: auto;
+	height: 380px;
+	top: -70px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+
+.news .highlight .content h3 {
+	font: 60px/78px 'bold';
+	color: #FFF;
+	margin: 10px auto;
+	text-transform: uppercase;
+	text-align: center;
+	width: 370px;
+}
+
+.news .highlight .content h3:before {
+content: "";
+width: 15px;
+height: 13px;
+background: url('../img/ui/star.png');
+position: absolute;
+top: 35px;
+left: 180px;
+}
+
+.news .highlight .content h3:after {
+content: "";
+width: 15px;
+height: 13px;
+background: url('../img/ui/star.png');
+position: absolute;
+top: 35px;
+right: 185px;
+}
+
+.news .highlight .content article {
+	float: left;
+	width: 185px;
+	margin-right: 72px;
+}
+
+.news .highlight .content article.last {
+	margin-right: 0;
+}
+
+.news .highlight .content article div {
+	background: url('../img/news/circle.png') no-repeat 0 0;
+	width: 183px;
+	height: 183px;
+}
+
+.news .highlight .content article div i {
+
+}
+
+
+
+.news .highlight .content article a {
+	display: block;
+	text-decoration: none;
+}
+
+.news .highlight .content article h4 {
+	font: 22px/26px 'bold';
+	color: #484848;
+	margin: 16px 0;
+	text-align: center;
+	text-transform: uppercase;
+
+}
+
+.news .highlight .content article.news i {
+background: url('../img/news/icons.png') no-repeat 0 0;
+width: 78px;
+height: 59px;
+display: block;
+position: relative;
+margin: auto;
+top: 65px;
+}
+
+.news .highlight .content article.press i {
+background: url('../img/news/icons.png') no-repeat -95px -2px;
+width: 50px;
+height: 63px;
+display: block;
+position: relative;
+margin: auto;
+top: 60px;
+}
+
+.news .highlight .content article.campaigns i {
+background: url('../img/news/icons.png') no-repeat -165px -4px;
+width: 65px;
+height: 55px;
+display: block;
+position: relative;
+margin: auto;
+top: 60px;
+}
+
+
+.news .highlight .content span {
+background: url('../img/ui/line.png') no-repeat 0px 12px, url('../img/ui/icon_down.png') no-repeat 133px 0px;
+width: 310px;
+display: block;
+height: 26px;
+position: absolute;
+bottom: -28px;
+margin: auto;
+left: 0;
+right: 0;
+}
+
+
+
+/* ===============================================================
+
+** BACKGROUND
+
+================================================================*/
+
+.news .background {
+width: 100%;
+height: 2179px;
+background: url('../img/news/mask.png') no-repeat center 0px, 
+ url('../img/news/background.jpg') no-repeat center 269px;
+position: relative;
+z-index: 999999;
+margin-top: -240px;
+float: left;
+
+}
+
+.news .background .center {
+width: 1025px;
+margin: 0 auto;
+margin-top: 300px;
+position: relative;
+}
+
+.news .swiper-slide > div div.scrollable {
+position: relative;
+width: 320px!important;
+float: left;
+height: 113px;
+top: 0;
+left: 0;
+}
+
+
+/* ===============================================================
+
+** NEWS
+
+================================================================*/
+
+.news .slider_news {
+	height: 310px;
+	width: 100%;
+}
+
+.news .slider_news .prev {
+display: none;
+width: 50px;
+height: 50px;
+background: url('../img/ui/arrows.png') no-repeat 0 0;
+position: absolute;
+top: 125px;
+left: 20px;
+z-index: 999999;
+cursor:pointer; 
+}
+
+.news .slider_news .next {
+display: block;
+width: 50px;
+height: 50px;
+background: url('../img/ui/arrows.png') no-repeat -50px 0;
+position: absolute;
+top: 125px;
+right: 20px;
+z-index: 999999;
+cursor:pointer;   	
+}
+
+
+.news #news {
+	width: 80%;
+}
+
+.news #news img{
+	float: left;
+}
+
+
+.news #news .swiper-slide > div {
+	float: left;
+	width: 325px;
+	height: 310px;
+	margin-left: 45px;
+	text-align: left;
+}
+
+.news #news .swiper-slide > div h3 {
+font: 36px/40px 'bold';
+color: #000;
+text-transform: uppercase;
+margin: 0;
+display: block;
+}
+
+.news #news .swiper-slide > div h3 i {
+position: relative;
+top: -5px;
+right: 0;
+background: url('../img/ui/star_black.png');
+width: 21px;
+height: 19px;
+display: inline-block;
+margin-left: 10px;
+}
+
+.news #news .swiper-slide > div small {
+		color: #000;
+		font: 18px/22px 'museo_500';
+		margin: 5px 0;
+		display: block;
+}
+
+.news #news .swiper-slide > div h4 {
+		color: #000;
+		font: 24px/28px 'bold';
+		margin: 5px 0;
+		text-transform: uppercase;
+}
+
+
+
+.news #news .swiper-slide > div p {
+		color: #000;
+		font: 16px/20px 'museo_100';
+		margin: 5px 0;
+		width: 100%;
+}
+
+
+
+.news #news .swiper-slide > div a {
+width: 25px;
+height: 25px;
+display: block;
+color:#ad2321;
+fill:#ad2321;
+padding: 6px;
+border-radius: 30px;
+border: 1px solid #ad2321;
+float: left;
+margin:10px 10px 0 0 ;
+}
+
+
+/* ===============================================================
+
+** PRESS
+
+================================================================*/
+
+
+
+.news .slider_press {
+height: 310px;
+width: 100%;
+position: relative;
+margin-top: 400px;
+}
+
+.news .slider_press .prev {
+display: none;
+width: 50px;
+height: 50px;
+background: url('../img/ui/arrows.png') no-repeat 0 0;
+position: absolute;
+top: 125px;
+left: 20px;
+z-index: 999999;
+cursor:pointer; 
+}
+
+.news .slider_press .next {
+display: block;
+width: 50px;
+height: 50px;
+background: url('../img/ui/arrows.png') no-repeat -50px 0;
+position: absolute;
+top: 125px;
+right: 20px;
+z-index: 999999;
+cursor:pointer;   	
+}
+
+
+.news #press {
+	width: 80%;
+}
+
+.news #press img {
+float: right;
+}
+
+.news #press .swiper-slide > div {
+float: right;
+width: 325px;
+height: 310px;
+margin-right: 36px;
+text-align: right;
+}
+
+.news #press .swiper-slide > div h3 {
+font: 36px/40px 'bold';
+color: #000;
+text-transform: uppercase;
+margin: 0;
+display: block;
+}
+
+.news #press .swiper-slide > div h3 i {
+position: relative;
+top: -5px;
+right: 0;
+background: url('../img/ui/star_black.png');
+width: 21px;
+height: 19px;
+display: inline-block;
+margin-left: 10px;
+}
+
+.news #press .swiper-slide > div small {
+		color: #000;
+		font: 18px/22px 'museo_500';
+		margin: 5px 0;
+		display: block;
+}
+
+.news #press .swiper-slide > div h4 {
+		color: #000;
+		font: 24px/28px 'bold';
+		margin: 5px 0;
+		text-transform: uppercase;
+}
+
+.news #press .swiper-slide > div p {
+color: #000;
+font: 16px/20px 'museo_100';
+margin: 5px 0;
+width: 100%;
+position: relative;
+right: 13px!important;
+}
+
+
+.news #press .swiper-slide > div a {
+width: 25px;
+height: 25px;
+display: block;
+color: #f1912a;
+fill: #f1912a;
+padding: 6px;
+border-radius: 30px;
+border: 1px solid #f1912a;
+float: right;
+margin: 10px 10px 0 0;
+}
+
+
+.news #press .ps-scrollbar-y-rail {
+	right: 0px!important;
+}
+
+
+/* ===============================================================
+
+** CAMPAIGNS
+
+================================================================*/
+
+
+.news .slider_campaigns {
+height: 310px;
+width: 100%;
+position: relative;
+margin-top: 335px;
+}
+
+.news .slider_campaigns .prev {
+display: none;
+width: 50px;
+height: 50px;
+background: url('../img/ui/arrows.png') no-repeat 0 0;
+position: absolute;
+top: 125px;
+left: 20px;
+z-index: 999999;
+cursor:pointer; 
+}
+
+.news .slider_campaigns .next {
+display: block;
+width: 50px;
+height: 50px;
+background: url('../img/ui/arrows.png') no-repeat -50px 0;
+position: absolute;
+top: 125px;
+right: 20px;
+z-index: 999999;
+cursor:pointer;   	
+}
+
+.news #campaigns {
+	width: 80%;
+}
+
+.news #campaigns img{
+	float: left;
+}
+
+
+
+
+
+
+.news #campaigns .swiper-slide > div {
+	float: left;
+	width: 325px;
+	height: 310px;
+	margin-left: 45px;
+	text-align: left;
+}
+
+.news #campaigns .swiper-slide > div h3 {
+font: 36px/40px 'bold';
+color: #000;
+text-transform: uppercase;
+margin: 0;
+display: block;
+}
+
+.news #campaigns .swiper-slide > div h3 i {
+position: relative;
+top: -5px;
+right: 0;
+background: url('../img/ui/star_black.png');
+width: 21px;
+height: 19px;
+display: inline-block;
+margin-left: 10px;
+}
+
+.news #campaigns .swiper-slide > div small {
+		color: #000;
+		font: 18px/22px 'museo_500';
+		margin: 5px 0;
+		display: block;
+}
+
+.news #campaigns .swiper-slide > div h4 {
+		color: #000;
+		font: 24px/28px 'bold';
+		margin: 5px 0;
+		text-transform: uppercase;
+}
+
+.news #campaigns .swiper-slide > div p {
+		color: #000;
+		font: 16px/20px 'museo_100';
+		margin: 5px 0;
+		width: 100%;
+}
+
+
+.news #campaigns .swiper-slide > div a {
+width: 25px;
+height: 25px;
+display: block;
+color:#164ffe;
+fill:#164ffe;
+padding: 6px;
+border-radius: 30px;
+border: 1px solid #164ffe;
+float: left;
+margin:10px 10px 0 0 ;
+}
+
+
+
+/* ===================================================================================================================================================
+
+** CAREERS
+
+====================================================================================================================================================*/
+
+
+
+.careers .center {
+width: 950px;
+margin: 0 auto;
+}
+
+/* ===============================================================
+
+** HIGHLIGHT
+
+================================================================*/
+
+.careers .highlight {
+position: relative;
+width: 100%;
+opacity: 0;
+height: 913px;
+background: url('../img/careers/highlight.jpg') no-repeat center 0;
+}
+
+
+.careers .highlight .content {
+	position: absolute;
+	width: 950px;
+	margin: auto;
+	height: 380px;
+	top: -70px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+
+.careers .highlight .content h3 {
+	font: 60px/78px 'bold';
+	color: #303030;
+	margin: 10px auto;
+	text-transform: uppercase;
+	text-align: center;
+	width: 370px;
+}
+
+.careers .highlight .content h3:before {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 35px;
+left: 350px;
+}
+
+.careers .highlight .content h3:after {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 35px;
+right: 350px;
+}
+
+
+.careers .background {
+	width: 100%;
+	height: 3648px;
+	background: url('../img/careers/mask.png') no-repeat center 0px, 
+	 url('../img/careers/background.jpg') no-repeat center 269px;
+	position: relative;
+	z-index: 9999999;
+	margin-top: -240px;
+	float: left;
+}
+
+
+.careers .highlight .content p {
+color: #000;
+font: 20px/24px 'museo_100';
+margin: 10px 0;
+width: 100%;
+}
+
+.careers .highlight .content strong {
+color: #000;
+font: 20px/24px 'museo_500';
+margin: 10px 0;
+width: 100%;
+}
+
+
+.careers .highlight .content span {
+background: url('../img/ui/line.png') no-repeat 0px 12px, url('../img/ui/icon_down.png') no-repeat 133px 0px;
+width: 310px;
+display: block;
+height: 26px;
+position: absolute;
+bottom: -28px;
+margin: auto;
+left: 0;
+right: 0;
+}
+
+
+
+
+
+/* ===============================================================
+
+** WORKING
+
+================================================================*/
+
+.careers .working {
+position: relative;
+margin-top: 315px;
+overflow: hidden;
+}
+
+.careers .working h3 {
+font: 60px/78px 'bold';
+color: #303030;
+margin: 10px auto;
+text-transform: uppercase;
+text-align: center;
+width: 480px;
+}
+
+.careers .working h3:before {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 35px;
+left: 220px;
+}
+
+.careers .working  h3:after {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 35px;
+right: 220px;
+}
+
+.careers .working > p {
+color: #000;
+font: 20px/24px 'museo_100';
+margin: 10px auto 40px;
+width: 95%;
+}
+
+.careers .working article {
+width: 201px;
+float: left;
+margin-right: 155px;
+}
+
+.careers .working div {
+background: url('../img/careers/circle.png') no-repeat 0 0;
+width: 201px;
+height: 200px;
+}
+
+
+.careers .working article.last {
+	margin-right: 0;
+}
+
+.careers .working .culture i {
+	background: url('../img/careers/culture.png') no-repeat 0 0;
+	width: 117px;
+	height: 114px;
+	display: block;
+	position: relative;
+	margin: auto;
+	top: 45px;
+}
+
+.careers .working .growth i {
+background: url('../img/careers/growth.png') no-repeat 0 0;
+width: 79px;
+height: 71px;
+display: block;
+position: relative;
+margin: auto;
+top: 60px;
+}
+
+.careers .working .opportunity i {
+background: url('../img/careers/opportunity.png') no-repeat 0 0;
+width: 106px;
+height: 75px;
+display: block;
+position: relative;
+margin: auto;
+top: 68px;
+}
+
+.careers .working h6 {
+font: 22px/26px 'bold';
+color: #303030;
+margin: 20px auto 6px;
+text-transform: uppercase;
+text-align: center;
+}
+
+.careers .working article p {
+color: #1e1e1e;
+font: 18px/22px 'museo_100';
+margin: 10px 0;
+text-align: center;
+}
+
+/* ===============================================================
+
+** INTERNSHIPS
+
+================================================================*/
+
+.careers .internships {
+position: relative;
+margin-top: 290px;
+overflow: hidden;
+}
+
+.careers .internships > div{
+width: 100%;
+height: 750px;
+display: block;
+overflow: hidden;
+}
+
+
+.careers .internships h3 {
+font: 60px/78px 'bold';
+color: #303030;
+margin: 10px auto;
+text-transform: uppercase;
+text-align: center;
+width: 480px;
+}
+
+.careers .internships h3:before {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 35px;
+left: 315px;
+}
+
+.careers .internships  h3:after {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 35px;
+right: 315px;
+}
+
+.careers .internships > p {
+color: #000;
+font: 20px/24px 'museo_100';
+margin: 10px 0 40px;
+width: 100%;
+}
+
+.careers .internships span {
+position: absolute;
+top: 428px;
+left: 286px;
+background: url('../img/careers/circle_red.png') no-repeat 0 0;
+width: 342px;
+height: 342px;
+display: block;
+}
+
+.careers .internships span h4 {
+	font: 40px/44px 'bold';
+	color: #FFF;
+	margin: 0 auto;
+	text-transform: uppercase;
+	text-align: center;
+	width: 76%;
+	position: relative;
+	top: 90px;
+}
+
+
+.careers .internships article {
+	position: absolute;
+}
+
+.careers .internships article div {
+	width: 167px;
+	height: 166px;
+	background: url('../img/careers/small_circle_red.png');
+}
+
+.careers .internships article h6 {
+font: 22px/26px 'bold';
+color: #303030;
+margin: auto;
+text-transform: uppercase;
+text-align: center;
+position: relative;
+margin: 15px 0;
+}
+
+.careers .internships article i {
+display: block;
+position: relative;
+margin: auto;
+}
+
+
+/* =====================================
+
+** ACCOUTING
+
+======================================*/
+
+.careers .internships article.accouting {
+	top: 186px;
+	left: 375px;
+}
+
+.careers .internships article.accouting i {
+background: url('../img/careers/internships_1.png') no-repeat 0 0;
+width: 64px;
+height: 87px;
+top: 40px;
+left: 4px;
+}
+
+/* =====================================
+
+** SUPPLY
+
+======================================*/
+
+.careers .internships article.supply  {
+top: 320px;
+left: 715px;
+}
+
+.careers .internships article.supply i {
+background: url('../img/careers/internships_2.png') no-repeat 0 0;
+width: 73px;
+height: 73px;
+top: 47px;
+left: 0px;
+}
+
+/* =====================================
+
+** SALES
+
+======================================*/
+
+.careers .internships article.sales {
+top: 714px;
+left: 600px;
+}
+
+.careers .internships article.sales i {
+background: url('../img/careers/internships_3.png') no-repeat 0 0;
+width: 83px;
+height: 75px;
+top: 47px;
+left: 0px;
+}
+
+/* =====================================
+
+** PRODUCTION
+
+======================================*/
+
+.careers .internships article.production {
+top: 714px;
+left: 150px;
+}
+
+.careers .internships article.production i {
+background: url('../img/careers/internships_4.png') no-repeat 0 0;
+width: 86px;
+height: 61px;
+top: 47px;
+left: 0px;
+}
+
+/* =====================================
+
+** MARKETING
+
+======================================*/
+
+.careers .internships article.marketing {
+top: 310px;
+left: 70px;
+}
+
+.careers .internships article.marketing i {
+background: url('../img/careers/internships_5.png') no-repeat 0 0;
+width: 72px;
+height: 74px;
+top: 47px;
+left: 0px;
+}
+
+
+/* ===============================================================
+
+** BARCEL USA
+
+================================================================*/
+
+
+
+.careers .barcel_usa {
+position: relative;
+margin-top: 265px;
+overflow: hidden;
+}
+
+
+.careers .barcel_usa h3 {
+font: 60px/78px 'bold';
+color: #303030;
+margin: 10px auto 50px;
+text-transform: uppercase;
+text-align: center;
+width: 480px;
+}
+
+
+
+.careers .barcel_usa h3:before {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 35px;
+left: 255px;
+}
+
+.careers .barcel_usa  h3:after {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 35px;
+right: 255px;
+}
+
+
+.careers .barcel_usa article {
+	overflow: hidden;
+	height: auto;
+	position: relative;
+}
+
+.careers .barcel_usa img {
+float: left;
+margin-right: 20px;
+}
+
+.careers .barcel_usa h6 {
+float: left;
+font: 40px/44px 'bold';
+color: #333333;
+margin: 0 auto;
+text-transform: uppercase;
+}
+
+.careers .barcel_usa p {
+float: left;
+font: 20px/24px 'museo_100';
+color: #1E1E1E;
+margin: 10px auto;
+width: 50%;
+}
+
+.careers .barcel_usa a {
+	background: url('../img/careers/badge.png');
+	width: 446px;
+	height: 70px;
+	display: block;
+	position: absolute;
+	bottom: 130px;
+	right: 65px;
+}
+
+
+/* ===============================================================
+
+** LINKEDIN  PROFILE
+
+================================================================*/
+
+
+
+.careers .linkedin_profile {
+position: relative;
+margin-top: 300px;
+overflow: hidden;
+height: 350px;
+}
+
+
+.careers .linkedin_profile h3 {
+font: 60px/78px 'bold';
+color: #303030;
+margin: 10px auto 50px;
+text-transform: uppercase;
+text-align: center;
+width: 480px;
+}
+
+
+
+.careers .linkedin_profile h3:before {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 35px;
+left: 360px;
+}
+
+.careers .linkedin_profile  h3:after {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 35px;
+right: 360px;
+}
+
+
+.careers .linkedin_profile a {
+background: url('../img/careers/linkedin_profile.png');
+width: 690px;
+height: 132px;
+display: block;
+position: absolute;
+top: 175px;
+right: 50%;
+margin: auto -345px;
+}
+
+
+
+
+
+/* ===================================================================================================================================================
+
+** RESPONSIBILITY
+
+====================================================================================================================================================*/
+
+
+
+.responsibility .center {
+width: 1025px;
+margin: 0 auto;
+}
+
+/* ===============================================================
+
+** Highlight
+
+================================================================*/
+
+.responsibility .highlight {
+position: relative;
+width: 100%;
+opacity: 0;
+height: 910px;
+background: url('../img/responsibility/highlight.jpg') no-repeat center 0;
+}
+
+
+.responsibility .highlight .content span {
+background: url('../img/ui/line.png') no-repeat 0px 12px, url('../img/ui/icon_down.png') no-repeat 133px 0px;
+width: 310px;
+display: block;
+height: 26px;
+position: absolute;
+bottom: -28px;
+margin: auto;
+left: 0;
+right: 0;
+}
+
+.responsibility .highlight .content {
+	position: absolute;
+	width: 950px;
+	margin: auto;
+	height: 380px;
+	top: -70px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+
+.responsibility .highlight .content h3 {
+	font: 60px/78px 'bold';
+	color: #303030;
+	margin: 10px auto;
+	text-transform: uppercase;
+	text-align: center;
+	width: 370px;
+}
+
+.responsibility .highlight .content h3:before {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 35px;
+left: 310px;
+}
+
+.responsibility .highlight .content h3:after {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 35px;
+right: 310px;
+}
+
+.responsibility .highlight .content p {
+color: #000;
+font: 20px/24px 'museo_100';
+margin: 10px 0;
+width: 100%;
+}
+
+.responsibility .background {
+width: 100%;
+height: 2105px;
+background: url('../img/responsibility/mask.png') no-repeat center 0px, url('../img/responsibility/background.jpg') no-repeat center 222px;
+position: relative;
+z-index: 9999999;
+margin-top: -220px;
+float: left;
+}
+
+
+.responsibility .social_responsibility {
+position: relative;
+margin-top: 235px;
+overflow: hidden;
+}
+
+.responsibility .social_responsibility h3 {
+font: 60px/78px 'bold';
+color: #303030;
+margin: 10px auto;
+text-transform: uppercase;
+text-align: center;
+width: 480px;
+}
+
+.responsibility .social_responsibility h3:before {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 35px;
+left: 245px;
+}
+
+.responsibility .social_responsibility  h3:after {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 35px;
+right: 245px;
+}
+
+.responsibility .social_responsibility > p {
+color: #000;
+font: 20px/24px 'museo_100';
+margin: 10px auto 20px;
+width: 95%;
+}
+
+.responsibility .social_responsibility > strong {
+color: #000;
+font: 20px/24px 'museo_500';
+margin: 10px auto 40px;
+width: 95%;
+display: block;
+}
+
+
+.responsibility .social_responsibility .social_media {
+	position: relative;
+	overflow: hidden;
+	width: 35%;
+	margin: 0 auto;
+}
+
+.responsibility .social_responsibility .social_media a {
+width: 35px;
+height: 35px;
+display: block;
+color: #AD2321;
+fill: #AD2321;
+padding: 6px;
+border-radius: 30px;
+border: 1px solid #AD2321;
+float: left;
+margin-right: 15px;
+}
+
+.responsibility .slider_nutrition {
+height: 310px;
+width: 100%;
+margin-top: 410px;
+position: relative;
+}
+
+.slider_nutrition  .prev {
+display: none;
+width: 50px;
+height: 50px;
+background: url('../img/ui/arrows.png') no-repeat 0 0;
+position: absolute;
+top: 125px;
+left: 20px;
+z-index: 999999;
+cursor:pointer; 
+}
+
+ .slider_nutrition .next {
+display: block;
+width: 50px;
+height: 50px;
+background: url('../img/ui/arrows.png') no-repeat -50px 0;
+position: absolute;
+top: 125px;
+right: 20px;
+z-index: 999999;
+cursor:pointer;   	
+}
+
+.swiper-slide > div div.scrollable {
+position: relative;
+width: 320px!important;
+float: left;
+height: 113px;
+top: 0;
+left: 0;
+}
+
+
+.slider_nutrition #nutrition {
+	width: 80%;
+}
+
+.slider_nutrition #nutrition img{
+	float: left;
+}
+
+
+.slider_nutrition #nutrition .swiper-slide > div {
+	float: left;
+	width: 325px;
+	height: 310px;
+	margin-left: 45px;
+	text-align: left;
+}
+
+.slider_nutrition #nutrition .swiper-slide > div h3 {
+font: 36px/40px 'bold';
+color: #000;
+text-transform: uppercase;
+margin: 0;
+display: block;
+}
+
+.slider_nutrition #nutrition .swiper-slide > div h3 i {
+position: relative;
+top: -5px;
+right: 0;
+background: url('../img/ui/star_black.png');
+width: 21px;
+height: 19px;
+display: inline-block;
+margin-left: 10px;
+}
+
+.slider_nutrition #nutrition .swiper-slide > div h4 {
+		color: #000;
+		font: 24px/28px 'bold';
+		margin: 5px 0;
+		text-transform: uppercase;
+}
+
+
+
+.slider_nutrition #nutrition .swiper-slide > div p {
+		color: #000;
+		font: 16px/20px 'museo_100';
+		margin: 5px 0;
+		width: 100%;
+}
+
+
+
+.slider_nutrition #nutrition .swiper-slide > div a {
+width: 25px;
+height: 25px;
+display: block;
+color:#ad2321;
+fill:#ad2321;
+padding: 6px;
+border-radius: 30px;
+border: 1px solid #ad2321;
+float: left;
+margin:10px 10px 0 0 ;
+}
+
+
+
+
+/* ===============================================================
+
+** LINKEDIN  PROFILE
+
+================================================================*/
+
+
+
+.responsibility .barcel_mexico {
+overflow: hidden;
+position: relative;
+margin-top: 295px;
+}
+
+
+.responsibility .barcel_mexico h3 {
+font: 60px/78px 'bold';
+color: #303030;
+margin: 10px auto 50px;
+text-transform: uppercase;
+text-align: center;
+width: 480px;
+}
+
+
+
+.responsibility .barcel_mexico h3:before {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 35px;
+left: 340px;
+}
+
+.responsibility .barcel_mexico  h3:after {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 35px;
+right: 340px;
+}
+
+
+.responsibility .barcel_mexico a {
+background: url('../img/responsibility/barcel_mexico.png');
+width: 501px;
+height: 96px;
+display: block;
+margin: 0 auto;
+}
+
+
+
+/* ===================================================================================================================================================
+
+** WHO WE ARE
+
+====================================================================================================================================================*/
+
+
+
+.who_we_are .center {
+width: 1025px;
+margin: 0 auto;
+}
+
+/* ===============================================================
+
+** HIGHLIGHT
+
+================================================================*/
+
+.who_we_are .highlight {
+position: relative;
+width: 100%;
+opacity: 0;
+height: 915px;
+background: url('../img/who_we_are/highlight.jpg') no-repeat center 0;
+}
+
+
+.who_we_are .highlight .content span {
+background: url('../img/ui/line.png') no-repeat 0px 12px, url('../img/ui/icon_down.png') no-repeat 133px 0px;
+width: 310px;
+display: block;
+height: 26px;
+margin: auto;
+left: 0;
+right: 0;
+}
+
+
+
+.who_we_are .highlight .content {
+	position: absolute;
+	width: 950px;
+	margin: auto;
+	height: 380px;
+	top: -70px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+
+.who_we_are .highlight .content h3 {
+	font: 60px/78px 'bold';
+	color: #303030;
+	margin: 10px auto;
+	text-transform: uppercase;
+	text-align: center;
+	width: 370px;
+}
+
+.who_we_are .highlight .content h3:before {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 35px;
+left: 355px;
+}
+
+.who_we_are .highlight .content h3:after {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 35px;
+right: 355px;
+}
+
+.who_we_are .highlight .content p {
+color: #000;
+font: 20px/24px 'museo_100';
+margin: 10px 0;
+width: 100%;
+}
+
+.who_we_are .highlight .content strong {
+color: #000;
+font: 20px/24px 'museo_500';
+margin: 20px auto 50px;
+width: 100%;
+display: block;
+}
+
+
+.who_we_are .background {
+width: 100%;
+height: 5155px;
+background: url('../img/who_we_are/mask.png') no-repeat center 0px, url('../img/who_we_are/background.jpg') no-repeat center 227px;
+position: relative;
+z-index: 9999999;
+margin-top: -240px;
+float: left;
+}
+
+
+
+
+/* ===============================================================
+
+** How its made
+
+================================================================*/
+
+.who_we_are .how_its_made {
+margin-top: 310px;
+overflow: hidden;
+}
+
+.who_we_are .how_its_made h3 {
+font: 60px/78px 'bold';
+color: #303030;
+margin: 10px auto;
+text-transform: uppercase;
+text-align: center;
+width: 480px;
+position: relative;
+}
+
+.who_we_are .how_its_made h3:before {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 25px;
+left: 385px;
+}
+
+.who_we_are .how_its_made  h3:after {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 25px;
+right: 385px;
+}
+
+.who_we_are .how_its_made > p {
+color: #000;
+font: 20px/24px 'museo_100';
+margin: 10px auto 20px;
+width: 95%;
+}
+
+.who_we_are .how_its_made > strong {
+color: #000;
+font: 20px/24px 'museo_500';
+margin: 10px auto 40px;
+width: 95%;
+display: block;
+}
+
+
+
+/* ===============================================================
+
+** Our Mission
+
+================================================================*/
+
+.who_we_are .our_mission {
+margin-top: 525px;
+overflow: hidden;
+}
+
+.who_we_are .our_mission h3 {
+font: 60px/78px 'bold';
+color: #303030;
+margin: 10px auto;
+text-transform: uppercase;
+text-align: center;
+width: 480px;
+position: relative;
+}
+
+.who_we_are .our_mission h3:before {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 25px;
+left: 385px;
+}
+
+.who_we_are .our_mission  h3:after {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 25px;
+right: 385px;
+}
+
+.who_we_are .our_mission > p {
+color: #000;
+font: 20px/24px 'museo_100';
+margin: 10px auto 20px;
+text-align: center;
+}
+
+
+/* ===============================================================
+
+** Our Vision
+
+================================================================*/
+
+.who_we_are .our_vision {
+margin-top: 55px;
+overflow: hidden;
+}
+
+.who_we_are .our_vision h3 {
+font: 60px/78px 'bold';
+color: #303030;
+margin: 10px auto;
+text-transform: uppercase;
+text-align: center;
+width: 480px;
+position: relative;
+}
+
+.who_we_are .our_vision h3:before {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 25px;
+left: 385px;
+}
+
+.who_we_are .our_vision  h3:after {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 25px;
+right: 385px;
+}
+
+.who_we_are .our_vision .rounded {
+background-color: #FB844A;
+box-sizing: border-box;
+border-radius: 75px;
+width: 540px;
+padding: 10px;
+margin: 20px auto;
+}
+
+.who_we_are .our_vision .rounded span {
+background-color: #FB844A;
+width: 520px;
+box-sizing: border-box;
+padding: 12px;
+display: block;
+border-radius: 60px;
+border: 1px dotted #000;
+font: 34px/40px 'bold';
+color: #FFF;
+text-transform: uppercase;
+text-align: center;
+}
+
+.who_we_are .our_vision .chart {
+width: 748px;
+height: 506px;
+background: url('../img/who_we_are/chart.png') 0 60px no-repeat;
+position: relative;
+margin-top: 10px;
+margin: 40px auto;
+}
+
+.who_we_are .our_vision .chart p {
+color: #000;
+font: 20px/24px 'museo_100';
+margin: 0 auto;
+position: absolute;
+}
+
+.who_we_are .our_vision .chart p strong{
+color: #fb844a;
+font: 20px/24px 'museo_500';
+}
+
+.who_we_are .our_vision .chart p.one {
+width: 330px;
+text-align: center;
+top: 10px;
+left: 50%;
+margin: 0 -160px;
+}
+
+.who_we_are .our_vision .chart p.two {
+width: 245px;
+text-align: left;
+top: 38%;
+right: -20px;
+}
+
+.who_we_are .our_vision .chart p.three{
+width: 285px;
+bottom: 0;
+right: 80px;
+text-align: left;
+}
+.who_we_are .our_vision .chart p.four {
+width: 260px;
+bottom: 0;
+left: 95px;
+text-align: right;
+}
+
+.who_we_are .our_vision .chart p.five {
+width: 220px;
+left: 0px;
+text-align: left;
+top: 38%;
+}
+
+.who_we_are .our_vision .chart div {
+position: absolute;
+width: 95px;
+height: 200px;
+top: 157px;
+left: 320px;
+}
+
+.who_we_are .our_vision .chart div i {
+width: 98px;
+height: 108px;
+display: block;
+position: relative;
+left: 7px;
+}
+.who_we_are .our_vision .chart div i svg path {
+	fill:#fff;
+}
+
+.who_we_are .our_vision .chart div h6 {
+font: 21px/30px 'bold';
+color: #FFF;
+text-transform: uppercase;
+margin: 3px 0 5px;
+text-align: center;
+}
+
+.who_we_are .our_vision .chart div h5 {
+font: 50px/30px 'bold';
+color: #FFF;
+text-transform: uppercase;
+margin: 2px 0;
+text-align: center;
+}
+
+.who_we_are .our_vision .rounded2 {
+background-color: #FB844A;
+box-sizing: border-box;
+border-radius: 75px;
+width: 850px;
+padding: 10px;
+margin: 20px auto;
+}
+
+
+.who_we_are .our_vision .rounded2 span {
+background-color: #FB844A;
+width: 830px;
+box-sizing: border-box;
+padding: 12px;
+display: block;
+border-radius: 60px;
+border: 1px dotted #000;
+font: 25px/30px 'museo_100'  ;
+color: #FFF;
+text-align: center;
+}
+
+.who_we_are .our_vision .rounded2 span strong {
+font: 25px/30px 'museo_500';	
+}
+
+
+/* ===============================================================
+
+** Our Values
+
+================================================================*/
+
+.who_we_are .our_values {
+margin-top: 55px;
+overflow: hidden;
+}
+
+.who_we_are .our_values h3 {
+font: 60px/78px 'bold';
+color: #303030;
+margin: 10px auto;
+text-transform: uppercase;
+text-align: center;
+width: 480px;
+position: relative;
+}
+
+.who_we_are .our_values h3:before {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 25px;
+left: 385px;
+}
+
+.who_we_are .our_values  h3:after {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 25px;
+right: 385px;
+}
+
+
+.who_we_are .our_values .chart {
+width: 998px;
+height: 667px;
+background: url('../img/who_we_are/chart_2.png') 0 0px no-repeat;
+position: relative;
+margin-top: 10px;
+margin: 40px auto;
+}
+
+.who_we_are .our_values .chart div {
+	position: absolute;
+}
+
+
+.who_we_are .our_values .chart div h6{
+	color: #333333;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+.who_we_are .our_values .chart div h5 {
+	color: #333;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+.who_we_are .our_values .chart div span {
+	display: block;
+	float: left;
+}
+
+.who_we_are .our_values .chart div p {
+	margin: 0;
+	float: right;
+	color: #000;
+	font: 20px/24px 'museo_100';
+}
+
+
+.who_we_are .our_values .chart div p strong {
+	color: #fb4a4a;
+	font: 20px/24px 'museo_500';
+}
+
+
+/* ===============================================================
+
+** One
+
+================================================================*/
+
+.who_we_are .our_values .chart div.one {
+top: 0px;
+left: 350px;
+width: 360px;
+}
+
+.who_we_are .our_values .chart div.one span {
+	width: 125px;
+}
+
+.who_we_are .our_values .chart div.one h6{
+	font: 28px/32px 'bold';
+}
+
+.who_we_are .our_values .chart div.one h5{
+		font: 49px/38px 'bold';
+}
+
+/* ===============================================================
+
+** Two
+
+================================================================*/
+
+.who_we_are .our_values .chart div.two {
+top: 240px;
+right: -10px;
+width: 320px;
+}
+
+.who_we_are .our_values .chart div.two span {
+	width: 120px;
+}
+
+.who_we_are .our_values .chart div.two h6 {
+	font: 32px/32px 'bold';
+}
+
+.who_we_are .our_values .chart div.two h5 {
+font: 37px/38px 'bold';
+}
+
+
+/* ===============================================================
+
+** Three
+
+================================================================*/
+
+.who_we_are .our_values .chart div.three {
+top: 425px;
+right: 100px;
+width: 155px;
+}
+
+.who_we_are .our_values .chart div.three p {
+	margin-top: 10px;
+}
+
+.who_we_are .our_values .chart div.three span {
+	width: 80px;
+}
+
+.who_we_are .our_values .chart div.three h6 {
+font: 30px/32px 'bold';
+}
+
+.who_we_are .our_values .chart div.three h5 {
+font: 45px/38px 'bold';
+}
+
+
+/* ===============================================================
+
+** Four
+
+================================================================*/
+
+.who_we_are .our_values .chart div.four {
+top: 599px;
+left: 282px;
+width: 428px;
+}
+
+.who_we_are .our_values .chart div.four span {
+	width: 190px;
+}
+
+.who_we_are .our_values .chart div.four p {
+	width: 200px;
+}
+
+.who_we_are .our_values .chart div.four h6 {
+font: 37px/32px 'bold';
+}
+
+.who_we_are .our_values .chart div.four h5 {
+font: 43px/44px 'bold';
+}
+
+
+/* ===============================================================
+
+** Five
+
+================================================================*/
+
+.who_we_are .our_values .chart div.five {
+top: 375px;
+left: 0px;
+width: 370px;
+}
+
+.who_we_are .our_values .chart div.five span {
+	width: 150px;
+}
+
+.who_we_are .our_values .chart div.five p {
+	width: 200px;
+}
+
+.who_we_are .our_values .chart div.five h6 {
+font: 36px/40px 'bold';
+}
+
+.who_we_are .our_values .chart div.five h5 {
+font: 34px/27px 'bold';
+}
+
+/* ===============================================================
+
+** Six
+
+================================================================*/
+
+.who_we_are .our_values .chart div.six {
+top: 60px;
+left: 90px;
+width: 190px;
+}
+
+.who_we_are .our_values .chart div.six span {
+	width: 110px;
+}
+
+.who_we_are .our_values .chart div.six p {
+	margin-top: 10px;
+}
+
+.who_we_are .our_values .chart div.six h6 {
+font: 34px/40px 'bold';
+}
+
+.who_we_are .our_values .chart div.six h5 {
+font: 48px/38px 'bold';
+}
+
+
+
+/* ===============================================================
+
+** Core
+
+================================================================*/
+
+.who_we_are .our_values .chart div.core {
+top: 241px;
+left: 407px;
+width: 160px;
+}
+
+.who_we_are .our_values .chart div.core span {
+	width: 160px;
+}
+
+
+.who_we_are .our_values .chart div.core p {
+	color: #fff;
+	margin-top: -6px;
+}
+
+
+.who_we_are .our_values .chart div.core h6 {
+font: 41px/40px 'bold';
+color: #FFF;
+}
+
+.who_we_are .our_values .chart div.core h5 {
+font: 70px/68px 'bold';
+color: #FFF;
+}
+
+
+
+
+/* ===============================================================
+
+** Our Values
+
+================================================================*/
+
+.who_we_are .our_people {
+margin-top: 280px;
+overflow: hidden;
+}
+
+.who_we_are .our_people h3 {
+font: 60px/78px 'bold';
+color: #303030;
+margin: 10px auto;
+text-transform: uppercase;
+text-align: center;
+width: 480px;
+position: relative;
+}
+
+.who_we_are .our_people h3:before {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 25px;
+left: 355px;
+}
+
+.who_we_are .our_people  h3:after {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 25px;
+right: 355px;
+}
+
+
+.who_we_are .our_people > p {
+color: #000;
+font: 20px/24px 'museo_100';
+margin: 10px auto 20px;
+text-align: left;
+}
+
+.who_we_are .our_people > strong {
+color: #000;
+font: 20px/24px 'museo_500';
+margin: 10px auto 15px;
+text-align: left;
+display: block;
+}
+
+
+/* ===============================================================
+
+** Div
+
+================================================================*/
+
+.who_we_are .our_people > div {
+overflow: hidden;
+margin-top: 50px;
+margin-bottom: 50px;
+}
+
+.who_we_are .our_people div article {
+	float: left;
+	margin: auto 22px; 
+	width: 210px;
+}
+
+
+.who_we_are .our_people div article div {
+	background: url('../img/who_we_are/circle.png');
+	width: 201px;
+	height: 200px;
+}
+
+.who_we_are .our_people div article div i.financial {
+width: 76px;
+height: 101px;
+position: relative;
+display: block;
+top: 46px;
+left: 60px;
+}
+
+.who_we_are .our_people div article div i.healthcare {
+width: 85px;
+height: 103px;
+position: relative;
+display: block;
+top: 46px;
+left: 57px;
+}
+
+.who_we_are .our_people div article div i.tools {
+width: 117px;
+height: 96px;
+position: relative;
+display: block;
+top: 48px;
+left: 43px;
+}
+
+.who_we_are .our_people div article div i.wellness {
+width: 95px;
+height: 92px;
+position: relative;
+display: block;
+top: 51px;
+left: 58px;
+}
+
+
+.who_we_are .our_people div article div i svg {
+	fill:#fff;
+	width: 100%;
+	height: 100%;
+}
+
+.who_we_are .our_people div article h4 {
+	font: 30px/34px 'bold';
+	color: #333;
+	text-transform: uppercase;
+	margin:15px 0 ; 
+	text-align: center;
+}
+
+.who_we_are .our_people div article p  {
+color: #000;
+font: 20px/24px 'museo_100';
+margin: 0 auto;
+text-align: center;
+}
+
+
+.who_we_are .our_people ul {
+	margin: 0;
+	padding: 0;
+}
+
+.who_we_are .our_people ul li {
+color: #000;
+font: 20px/30px 'museo_100';
+margin: 0 auto;
+padding-left: 25px;
+background: url('../img/ui/red_sprite.png') no-repeat 0px 8px;
+}
+
+
+
+
+
+/* ===============================================================
+
+** Our Values
+
+================================================================*/
+
+.who_we_are .barcel_mexico {
+margin-top: 190px;
+overflow: hidden;
+}
+
+.who_we_are .barcel_mexico h3 {
+font: 60px/78px 'bold';
+color: #303030;
+margin: 10px auto 20px;
+text-transform: uppercase;
+text-align: center;
+width: 480px;
+position: relative;
+}
+
+.who_we_are .barcel_mexico h3:before {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 25px;
+left: 70px;
+}
+
+.who_we_are .barcel_mexico  h3:after {
+content: "";
+width: 21px;
+height: 19px;
+background: url('../img/ui/star_black.png');
+position: absolute;
+top: 25px;
+right: 70px;
+}
+
+
+.who_we_are .barcel_mexico a {
+background: url('../img/who_we_are/barcel_mexico.png');
+width: 501px;
+height: 96px;
+display: block;
+margin: 0 auto;
+}

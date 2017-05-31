@@ -1,0 +1,701 @@
+/* ===============================================================
+
+** Nicescroll
+
+================================================================*/
+
+#ascrail2000 {
+	z-index: 99999999999999!important;
+}
+
+/* ===============================================================
+
+** Master Slider
+
+================================================================*/
+
+.ms-skin-default .ms-slide .ms-slide-vpbtn,
+.ms-skin-default .ms-video-btn{
+	width: 50px;
+	height: 51px;
+	background: url(light-skin-1.png) no-repeat -14px -150px;
+	top: 50%;
+	left: 50%;
+	margin: -25px 0 0 -25px;
+}
+
+.ms-skin-default .ms-slide .ms-slide-vcbtn {
+	width: 30px;
+	height: 30px;
+	background: url(light-skin-1.png) no-repeat -24px -28px;
+	top: 18px;
+	right: 30px;
+}
+
+/* controls */
+
+.ms-skin-default .ms-nav-next,
+.ms-skin-default .ms-nav-prev {
+	width: 30px;
+	background: url(light-skin-1.png);
+	background-position: -89px -26px;
+	height: 40px;
+	cursor: pointer;
+	top: 44%;
+	left: 30px;
+	margin-top: -20px;
+	position: absolute;
+	z-index: 10;
+}
+.ms-skin-default .ms-nav-next {
+	right: 30px;
+	left: auto;
+	background-position: -89px -103px;
+}
+
+.ms-skin-default .ms-thumb-frame-selected {
+	opacity: 0.6;
+}
+
+.ms-skin-default .ms-thumb-list.ms-dir-h {
+	bottom: -60px;
+	width: 100%;
+	height: 60px;
+}
+
+.ms-skin-default .ms-thumb-list.ms-dir-v {
+	height: 100%;
+	width: 60px;
+	right: -60px;
+	top: 0;
+}
+
+.ms-skin-default .ms-thumb-frame {
+	cursor: pointer;
+	float: left;
+	width: 60px;
+	height: 60px;
+	margin: 1px 0 0 1px;
+	overflow: hidden;
+}
+
+.ms-skin-default .ms-bullets.ms-dir-h {
+	position: absolute;
+	bottom: 20px;
+	right: 50%;
+	width: 100px;
+}
+
+.ms-skin-default .ms-bullets.ms-dir-h .ms-bullets-count {
+	position: relative;
+	right: -50%;
+}
+
+.ms-skin-default .ms-bullet {
+	width: 10px;
+	height: 10px;
+	background: url(light-skin-1.png) no-repeat;
+	margin: 4px;
+	background-position: -34px -117px;
+}
+
+.ms-skin-default .ms-bullet-selected {
+	background-position: -34px -84px;
+}
+
+.ms-skin-default .ms-sbar {
+	position: absolute;
+}
+
+.ms-skin-default .ms-sbar.ms-dir-h {
+	left: 10px;
+	right: 10px;
+	top: 5px
+}
+
+.ms-skin-default .ms-sbar.ms-dir-v {
+	top: 10px;
+	bottom: 10px;
+	right: 5px
+}
+
+.ms-skin-default .ms-sbar .ms-bar {
+	height: 4px;
+	background: #DD00FF;
+	border-radius: 4px;
+}
+
+.ms-skin-default .ms-sbar.ms-dir-v .ms-bar {
+	width: 4px;
+}
+
+.ms-skin-default .ms-timerbar {
+	width: 100%;
+	bottom: 0px;
+	position: absolute;
+}
+
+.ms-skin-default .ms-time-bar {
+	height: 3px;
+	background: #FFFFFF;
+	border-top: solid 1px rgba(0, 0, 0, 0.41);
+}
+
+.ms-skin-default .ms-ctimer {
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	cursor: pointer;
+}
+
+.ms-skin-default .ms-ctimer-bullet {}
+
+.ms-skin-default .ms-tooltip{
+	position: absolute;
+	z-index: 110;
+	cursor: auto;
+}
+
+.ms-skin-default .ms-tooltip-top .ms-tooltip-arrow,
+.ms-skin-default .ms-tooltip-bottom .ms-tooltip-arrow{
+	border-left: solid 10px transparent;
+	border-right: solid 10px transparent;
+	position: absolute;
+	left: 50%;
+	margin-left: -10px;
+}
+
+.ms-skin-default .ms-tooltip-top .ms-tooltip-arrow{
+	border-top: solid 10px;
+	border-top-color: silver;
+	border-top-color: rgba(240, 240, 240, 0.88);
+	bottom: -10px;
+}
+
+.ms-skin-default .ms-tooltip-bottom .ms-tooltip-arrow {
+	border-bottom: solid 10px;
+	border-bottom-color: silver;
+	border-bottom-color: rgba(240, 240, 240, 0.88);
+	top: -10px;
+}
+
+.ms-skin-default .ms-tooltip-right .ms-tooltip-arrow,
+.ms-skin-default .ms-tooltip-left .ms-tooltip-arrow{
+	border-top: solid 10px transparent;
+	border-bottom: solid 10px transparent;
+	position: absolute;
+	top: 50%;
+	margin-top: -10px;
+}
+
+.ms-skin-default .ms-tooltip-right .ms-tooltip-arrow{
+	border-right: solid 10px;
+	border-right-color: silver;
+	border-right-color: rgba(240, 240, 240, 0.88);
+	left: -10px;
+}
+
+.ms-skin-default .ms-tooltip-left .ms-tooltip-arrow {
+	border-left: solid 10px;
+	border-left-color: silver;
+	border-left-color: rgba(240, 240, 240, 0.88);
+	right: -10px;
+}
+
+@keyframes point-anim{
+	0% 		{transform: scale(0.5); -webkit-transform: scale(0.5); -moz-transform: scale(0.5); -o-transform: scale(0.5); -ms-transform: scale(0.5);  opacity: 1; }
+	100% 	{transform: scale(0.5); -webkit-transform: scale(0.5); -moz-transform: scale(1.5); -o-transform: scale(1.5); -ms-transform: scale(1.5);  opacity: 0; }
+}
+
+@-webkit-keyframes point-anim{
+	0% 		{-webkit-transform: scale(0.5); opacity: 1; }
+	100% 	{-webkit-transform: scale(1.5);	opacity: 0; }
+}
+
+.ms-skin-default .ms-tooltip-point {cursor: pointer;}
+.ms-skin-default .ms-tooltip-point .ms-point-center {
+	width: 12px;
+	height: 12px; 
+	border-radius: 15px;
+	border: solid 2px #BBB;
+	background: white;
+	margin: -8px 0 0 -8px;
+	position: absolute;
+	z-index: 5;
+}
+
+.ms-skin-default .ms-tooltip-point .ms-point-border {
+	width: 22px;
+	height: 22px; 
+	background: black;
+	background:rgba(0, 0, 0, 0.36);
+	margin: -11px 0 0 -11px;
+	position: absolute;
+	border-radius: 15px;
+	
+	animation: point-anim 1.5s infinite ;
+	-moz-animation: point-anim 1.5s infinite;
+	-webkit-animation: point-anim 1.5s infinite;
+	-o-animation: point-anim 1.5s infinite;
+}
+
+/* In Android browser, using css animations over slider causes some crashes */
+.ms-android.ms-skin-default .ms-tooltip-point .ms-point-border{
+	animation:none;
+	-moz-animation:none;
+	-webkit-animation:none;
+	-o-animation:none;
+}
+
+.ms-skin-default .ms-tooltip {
+	max-width:200px;
+}
+
+.ms-skin-default .ms-tooltip-cont {
+	padding: 10px;
+	background: silver;
+	background: rgba(240, 240, 240, 0.88);
+	text-shadow: 0 1px 0px white;
+	margin-left: -1px;
+}
+
+
+
+/** 
+ *  Master Slider
+ *	version 1.5
+ * 	Core css file
+ */
+
+.master-slider{
+	position: relative;
+	visibility: hidden;
+	-moz-transform: translate3d(0 , 0 , 0);
+}
+
+
+
+
+
+
+.master-slider.ms-fullheight{height: 100%;}
+
+.master-slider.before-init{}
+
+.master-slider img {max-width:none;}
+
+.ms-ie img{border:none;}
+.ms-ie8 * {opacity:inherit;filter:inherit;}
+.ms-ie7   {zoom:1;}
+
+.ms-loading-container{
+	position:absolute;
+	width:100%;
+	top:0;
+}
+
+.ms-loading-container .ms-loading,
+.ms-slide .ms-slide-loading {
+	width: 36px;
+	height: 36px;
+	background: url(loading-2.gif) no-repeat center white;
+	border-radius: 60px;
+	box-shadow: 0px 0px 3px rgba(0,0,0,0.2);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -18px;
+	opacity: 0.9;
+}
+
+
+/* grab cursor */
+.ms-def-cursor{cursor:auto !important;}
+.ms-grab-cursor{cursor: url("grab.png"), move;}
+.ms-grabbing-cursor{cursor: url("grabbing.png"), move;}
+.ms-ie .ms-grab-cursor{cursor: url("../masterslider/style/grab.cur"), move;}
+.ms-ie .ms-grabbing-cursor {cursor: url("../masterslider/style/grabbing.cur"), move;}
+
+.ms-view { 
+	margin:0px auto;
+	overflow:hidden;
+	background:transparent;
+	position:relative;
+	-webkit-perspective: 2000px;
+	-moz-perspective: 2000px;
+	-ms-perspective: 2000px;
+	perspective: 2000px;
+}
+
+.ms-view .ms-slide-container{position:relative;}
+
+.ms-slide {
+	position:absolute;
+	-webkit-transform: translateZ(0px);
+	-moz-transform: translateZ(0px);
+	-ms-transform: translateZ(0px);
+	-o-transform: translateZ(0px);
+	transform: translateZ(0px);
+	
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+
+	height:100%;
+}
+
+.ms-slide.selected {}
+
+.ms-slide .ms-slide-bgcont,
+.ms-slide .ms-slide-bgvideocont{
+	position: absolute;
+	overflow:hidden;
+	width: 100%;
+}
+
+.ms-slide .ms-slide-bgvideocont{
+	z-index: 5;
+	height: 100%;
+}
+
+.ms-slide .ms-slide-bgvideocont,
+.ms-slide-bgvideocont>video{
+	-webkit-transform: translateZ(0.3px);
+	-moz-transform: translateZ(0.3px);
+	-ms-transform: translateZ(0.3px);
+	-o-transform: translateZ(0.3px);
+	transform: translateZ(0.3px);
+}
+
+.ms-slide .ms-slide-bgvideo{
+	position: absolute;
+	top: 0px;
+}
+
+
+.ms-container {position: relative; margin:0 auto;}z
+.ms-slide .ms-slide-bgcont img , .ms-container{
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+
+.ms-slide .ms-layer{position:absolute;}
+
+.ms-slide .ms-slide-layers{
+	position: absolute;
+	overflow:hidden;
+	width:100%;
+	height: 100%;
+	z-index: 10;
+	top:0px;
+}
+
+.ms-slide .ms-slide-video{
+	position:absolute;
+	top:0;
+	z-index: 11;
+	background:black;
+	padding:0;
+	margin: 0;
+	border: none;
+
+}
+
+.ms-layer.video-box{background:black;}
+.ms-layer.video-box iframe{
+	padding:0;
+	margin: 0;
+	border: none;
+	position: absolute;
+	z-index: 10;
+}
+
+.ms-slide .ms-slide-vpbtn , .ms-slide .ms-video-btn{
+	position:absolute;
+	cursor: pointer;
+	z-index: 10;
+}
+
+.ms-slide .ms-slide-vcbtn{
+	position:absolute;
+	cursor: pointer;
+	z-index: 13;
+}
+
+.ms-slide-vcbtn-mobile{
+	position: relative;
+	bottom: 0;
+	left:0;
+	width:100%;
+	height: 28px;
+	background-color: black;
+	color: white;
+	text-align: center;
+	cursor: pointer;
+	z-index: 13;
+}
+
+.ms-slide-vcbtn-mobile .ms-vcbtn-txt {
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-size: 0.75em;
+    display: inline-block;
+    background: url(video-close-btn.png) no-repeat 0px 3px;
+    padding-left: 15px;
+    height: 15px;
+    color: #DBDBDB;
+    margin-top: 7px;
+}
+
+.ms-slide .ms-slide-vcbtn,
+.ms-slide .ms-slide-layers,
+.ms-slide .ms-slide-vpbtn,
+.ms-slide .ms-slide-video {
+	-webkit-transform: translateZ(0.44px);
+	-moz-transform: translateZ(0.44px);
+	-ms-transform: translateZ(0.44px);
+	-o-transform: translateZ(0.44px);
+	transform: translateZ(0.44px);
+}
+
+.ms-video-img{
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+}
+
+.ms-mask-frame{
+	overflow:hidden;
+	position:absolute;
+	float:left;
+}
+
+/* controls */
+
+.ms-thumb-list{
+	overflow:hidden;
+	position:absolute;
+}
+.ms-thumbs-cont{position: relative;}
+.ms-thumb-frame img{width:100%;	height:auto;}
+.ms-thumb-frame{
+	cursor:pointer;
+	float: left;
+	overflow: hidden;
+}
+
+.ms-bullet{cursor:pointer;float: left;}
+
+.ms-sbar .ms-bar{
+	position:relative;
+	-webkit-transition: opacity 300ms;
+	-moz-transition: opacity 300ms;
+	-ms-transition: opacity 300ms;
+	-o-transition: opacity 300ms;
+	transition: opacity 300ms;
+}
+
+.ms-time-bar{
+	-webkit-transition: width 120ms linear;
+	-moz-transition: width 120ms linear;
+	-ms-transition: width 120ms linear;
+	-o-transition: width 120ms linear;
+	transition: width 120ms linear;
+
+}
+
+.ms-ie7 .ms-tooltip-arrow{
+	height:0px;
+}
+
+
+
+/* ===============================================================
+
+** Swiper iDangerous
+
+================================================================*/
+
+
+.swiper-container {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+}
+
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    -webkit-transition-property: -webkit-transform,left,top;
+    -webkit-transition-duration: 0s;
+    -webkit-transform: translate3d(0px,0,0);
+    -webkit-transition-timing-function: ease;
+    -moz-transition-property: -moz-transform,left,top;
+    -moz-transition-duration: 0s;
+    -moz-transform: translate3d(0px,0,0);
+    -moz-transition-timing-function: ease;
+    -o-transition-property: -o-transform,left,top;
+    -o-transition-duration: 0s;
+    -o-transform: translate3d(0px,0,0);
+    -o-transition-timing-function: ease;
+    -o-transform: translate(0px,0px);
+    -ms-transition-property: -ms-transform,left,top;
+    -ms-transition-duration: 0s;
+    -ms-transform: translate3d(0px,0,0);
+    -ms-transition-timing-function: ease;
+    transition-property: transform,left,top;
+    transition-duration: 0s;
+    transform: translate3d(0px,0,0);
+    transition-timing-function: ease;
+}
+
+.swiper-free-mode>.swiper-wrapper {
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -ms-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    margin: 0 auto;
+}
+
+.swiper-slide {
+float: left;
+position: relative;
+cursor: default;
+}
+
+.swiper-wp8-horizontal {
+    -ms-touch-action: pan-y;
+}
+
+.swiper-wp8-vertical {
+    -ms-touch-action: pan-x;
+}
+
+
+
+
+
+
+/* ===============================================================
+
+** Swiper iDangerous
+
+================================================================*/
+
+.ps-container.ps-active-x > .ps-scrollbar-x-rail, .ps-container.ps-active-y > .ps-scrollbar-y-rail {
+  display: block; }
+.ps-container > .ps-scrollbar-x-rail {
+  display: none;
+  position: absolute;
+  /* please don't change 'position' */
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: background-color 0.2s linear, opacity 0.2s linear;
+  -moz-transition: background-color 0.2s linear, opacity 0.2s linear;
+  -o-transition: background-color 0.2s linear, opacity 0.2s linear;
+  transition: background-color 0.2s linear, opacity 0.2s linear;
+  bottom: 3px;
+  /* there must be 'bottom' for ps-scrollbar-x-rail */
+  height: 8px; }
+  .ps-container > .ps-scrollbar-x-rail > .ps-scrollbar-x {
+    position: absolute;
+    /* please don't change 'position' */
+    background-color: #aaa;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-transition: background-color 0.2s linear;
+    -moz-transition: background-color 0.2s linear;
+    -o-transition: background-color 0.2s linear;
+    transition: background-color 0.2s linear;
+    bottom: 0;
+    /* there must be 'bottom' for ps-scrollbar-x */
+    height: 8px; }
+  .ps-container > .ps-scrollbar-x-rail.in-scrolling {
+    background-color: #eee;
+    opacity: 0.9;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    filter: alpha(opacity=90); }
+.ps-container > .ps-scrollbar-y-rail {
+  display: none;
+  position: absolute;
+  /* please don't change 'position' */
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: background-color 0.2s linear, opacity 0.2s linear;
+  -moz-transition: background-color 0.2s linear, opacity 0.2s linear;
+  -o-transition: background-color 0.2s linear, opacity 0.2s linear;
+  transition: background-color 0.2s linear, opacity 0.2s linear;
+  right: 3px;
+  /* there must be 'right' for ps-scrollbar-y-rail */
+  width: 6px; }
+  .ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y {
+    position: absolute;
+    /* please don't change 'position' */
+    background-color: #aaa;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-transition: background-color 0.2s linear;
+    -moz-transition: background-color 0.2s linear;
+    -o-transition: background-color 0.2s linear;
+    transition: background-color 0.2s linear;
+    right: 0;
+    /* there must be 'right' for ps-scrollbar-y */
+    width: 6px; }
+  .ps-container > .ps-scrollbar-y-rail.in-scrolling {
+    background-color: #eee;
+    opacity: 0.9;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    filter: alpha(opacity=90); }
+.ps-container:hover > .ps-scrollbar-x-rail, .ps-container:hover > .ps-scrollbar-y-rail {
+  opacity: 0.6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: alpha(opacity=60); }
+  .ps-container:hover > .ps-scrollbar-x-rail.in-scrolling, .ps-container:hover > .ps-scrollbar-y-rail.in-scrolling {
+    background-color: #eee;
+    opacity: 0.9;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    filter: alpha(opacity=90); }
+.ps-container:hover > .ps-scrollbar-x-rail:hover {
+  background-color: #eee;
+  opacity: 0.9;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90); }
+  .ps-container:hover > .ps-scrollbar-x-rail:hover > .ps-scrollbar-x {
+    background-color: #999; }
+.ps-container:hover > .ps-scrollbar-y-rail:hover {
+  background-color: #eee;
+  opacity: 0.9;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90); }
+  .ps-container:hover > .ps-scrollbar-y-rail:hover > .ps-scrollbar-y {
+    background-color: #999; }
